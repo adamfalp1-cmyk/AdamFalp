@@ -40,7 +40,6 @@ body{
     margin:20px 0 70px 0;
 }
 
-/* LINKS */
 .nav a{
     color:#999;
     text-decoration:none;
@@ -52,33 +51,24 @@ body{
     color:#fff;
 }
 
-/* 90s BUTTON STYLE (CONTACT) */
-.nav a.button{
+/* CONTACT BUTTON (now near footer) */
+.contact-btn{
+    display:inline-block;
+    margin-top:40px;
     border:1px solid #cc0000;
-    padding:4px 10px;
+    padding:6px 14px;
     color:#cc0000;
     background:#111;
+    font-size:12px;
+    text-decoration:none;
 }
 
-.nav a.button:hover{
+.contact-btn:hover{
     background:#cc0000;
     color:#000;
 }
 
-/* SHOP BUTTON */
-.nav a.shop{
-    border:1px solid #666;
-    padding:4px 10px;
-    color:#fff;
-    background:#111;
-}
-
-.nav a.shop:hover{
-    background:#fff;
-    color:#000;
-}
-
-/* ABOUT (BOTTOM ONLY) */
+/* ABOUT */
 .about{
     width:520px;
     margin:120px auto 60px auto;
@@ -93,7 +83,7 @@ body{
     letter-spacing:1px;
 }
 
-/* SECTIONS */
+/* WORK */
 .work{
     margin-bottom:120px;
 }
@@ -123,6 +113,7 @@ body{
     text-align:center;
     font-size:12px;
     color:#666;
+    margin-top:20px;
 }
 
 </style>
@@ -144,14 +135,7 @@ body{
         <a href="#illustration">Illustration</a>
         <a href="#comics">Comics</a>
         <a href="#paintings">Paintings</a>
-
-        <a class="shop" href="https://YOUR-SHOP-LINK.com" target="_blank">
-            Shop
-        </a>
-
-        <a class="button" href="mailto:adamfalp1@yahoo.com">
-            Contact
-        </a>
+        <a href="https://YOUR-SHOP-LINK.com" target="_blank">Shop</a>
     </div>
 
 </div>
@@ -229,7 +213,7 @@ body{
 
 </div>
 
-<!-- ABOUT (BOTTOM ONLY) -->
+<!-- ABOUT -->
 <div class="about">
 
     <div class="section-title">About</div>
@@ -245,6 +229,11 @@ body{
     <p>
         Original paintings, comics and illustration projects appear here periodically.
     </p>
+
+    <!-- CONTACT BUTTON -->
+    <a class="contact-btn" href="mailto:adamfalp1@yahoo.com">
+        Contact
+    </a>
 
 </div>
 
