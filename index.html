@@ -14,34 +14,31 @@ body{
     padding:0;
 }
 
+/* MAIN CONTAINER */
 .container{
     width:760px;
     margin:0 auto;
     padding:30px 0 80px 0;
 }
 
+/* HEADER */
 .header{
     text-align:center;
-    margin-bottom:60px;
+    margin-bottom:40px;
 }
 
-.site-title{
-    color:#ffffff;
-    font-size:42px;
-    letter-spacing:4px;
-    margin-bottom:8px;
+/* LOGO CONTROL (FIXED) */
+.site-title img{
+    max-width:320px;
+    height:auto;
+    display:block;
+    margin:0 auto;
 }
 
-.subtitle{
-    color:#cc0000;
-    font-size:12px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-
+/* NAV */
 .nav{
     text-align:center;
-    margin:40px 0 70px 0;
+    margin:20px 0 70px 0;
 }
 
 .nav a{
@@ -55,6 +52,7 @@ body{
     color:#fff;
 }
 
+/* ABOUT */
 .about{
     width:520px;
     margin:0 auto 100px auto;
@@ -69,6 +67,7 @@ body{
     letter-spacing:1px;
 }
 
+/* WORK SECTIONS */
 .work{
     margin-bottom:120px;
 }
@@ -84,6 +83,15 @@ body{
     color:#777;
 }
 
+/* DIVIDER */
+.divider{
+    text-align:center;
+    color:#444;
+    margin:80px 0;
+    letter-spacing:6px;
+}
+
+/* FOOTER */
 .footer{
     text-align:center;
     margin-top:120px;
@@ -99,13 +107,6 @@ body{
     text-decoration:underline;
 }
 
-.divider{
-    text-align:center;
-    color:#444;
-    margin:80px 0;
-    letter-spacing:6px;
-}
-
 </style>
 </head>
 
@@ -113,133 +114,111 @@ body{
 
 <div class="container">
 
+<!-- HEADER -->
 <div class="header">
 
-<div class="site-title">
-<img src="adamfalpwhite.jpg" alt="Adam Falp">
+    <div class="site-title">
+        <img src="adamfalpwhite.jpg" alt="Adam Falp">
+    </div>
+
+    <div class="nav">
+        <a href="#illustration">Illustration</a>
+        <a href="#comics">Comics</a>
+        <a href="#paintings">Paintings</a>
+        <a href="#about">About</a>
+    </div>
+
 </div>
 
-<div class="nav">
-<a href="#illustration">Illustration</a>
-<a href="#comics">Comics</a>
-<a href="#paintings">Paintings</a>
-<a href="#about">About</a>
-</div>
-
+<!-- ABOUT -->
 <div class="about" id="about">
 
-<div class="section-title">About</div>
+    <div class="section-title">About</div>
 
-<p>
-Adam Falp is an artist, illustrator and cartoonist based in London.
-</p>
+    <p>
+        Adam Falp is an artist, illustrator and cartoonist based in London.
+    </p>
 
-<p>
-His work explores underground culture, crime, folklore, absurdity and the strange edges of contemporary Britain.
-</p>
+    <p>
+        His work explores underground culture, crime, folklore, absurdity and the strange edges of contemporary Britain.
+    </p>
 
-<p>
-Original paintings, comics and illustration projects appear here periodically.
-</p>
+    <p>
+        Original paintings, comics and illustration projects appear here periodically.
+    </p>
 
 </div>
 
-<div class="divider">
-•
-•
-•
-</div>
+<div class="divider">• • •</div>
 
+<!-- ILLUSTRATION -->
 <div class="work" id="illustration">
 
-<div class="section-title">
-Illustration
-</div>
+    <div class="section-title">Illustration</div>
 
-<img src="illustration1.jpg" alt="Illustration">
+    <img src="illustration1.jpg" alt="Illustration">
 
-<div class="caption">
-Untitled illustration, 2025
-</div>
+    <div class="caption">Untitled illustration, 2025</div>
 
 </div>
 
 <div class="work">
 
-<img src="illustration2.jpg" alt="Illustration">
+    <img src="illustration2.jpg" alt="Illustration">
 
-<div class="caption">
-Book illustration
-</div>
+    <div class="caption">Book illustration</div>
 
 </div>
 
-<div class="divider">
-•
-•
-•
-</div>
+<div class="divider">• • •</div>
 
+<!-- COMICS -->
 <div class="work" id="comics">
 
-<div class="section-title">
-Comics
-</div>
+    <div class="section-title">Comics</div>
 
-<img src="comic1.jpg" alt="Comic page">
+    <img src="comic1.jpg" alt="Comic page">
 
-<div class="caption">
-Smokin' Bedroom
-</div>
+    <div class="caption">Smokin' Bedroom</div>
 
 </div>
 
 <div class="work">
 
-<img src="comic2.jpg" alt="Comic page">
+    <img src="comic2.jpg" alt="Comic page">
 
-<div class="caption">
-Work in progress
-</div>
+    <div class="caption">Work in progress</div>
 
 </div>
 
-<div class="divider">
-•
-•
-•
-</div>
+<div class="divider">• • •</div>
 
+<!-- PAINTINGS -->
 <div class="work" id="paintings">
 
-<div class="section-title">
-Paintings
-</div>
+    <div class="section-title">Paintings</div>
 
-<img src="painting1.jpg" alt="Painting">
+    <img src="painting1.jpg" alt="Painting">
 
-<div class="caption">
-Oil on board
-</div>
+    <div class="caption">Oil on board</div>
 
 </div>
 
 <div class="work">
 
-<img src="painting2.jpg" alt="Painting">
+    <img src="painting2.jpg" alt="Painting">
 
-<div class="caption">
-Mixed media
-</div>
+    <div class="caption">Mixed media</div>
 
 </div>
 
-<div class="footer">
+<!-- FOOTER -->
+<div class="footer" style="margin-top:120px;">
 
-contact:
-<a href="mailto:adam@example.com">
-adam@example.com
-</a>
+    contact:
+    <a href="mailto:adam@example.com">
+        adam@example.com
+    </a>
 
 </div>
 
