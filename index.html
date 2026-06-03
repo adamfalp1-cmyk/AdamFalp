@@ -26,7 +26,6 @@ body{
     margin-bottom:40px;
 }
 
-/* LOGO */
 .site-title img{
     max-width:320px;
     height:auto;
@@ -37,7 +36,7 @@ body{
 /* NAV */
 .nav{
     text-align:center;
-    margin:20px 0 70px 0;
+    margin:20px 0 60px 0;
 }
 
 .nav a{
@@ -51,10 +50,56 @@ body{
     color:#fff;
 }
 
-/* CONTACT BUTTON (now near footer) */
+/* SECTION */
+.section-title{
+    color:#d10000;
+    font-size:22px;
+    margin:60px 0 25px 0;
+    letter-spacing:1px;
+}
+
+/* WORK BLOCK */
+.work{
+    margin-bottom:70px; /* KEY FIX: consistent spacing */
+}
+
+.work a{
+    display:block;
+}
+
+.work img{
+    width:100%;
+    height:auto;
+    display:block;
+    margin:0 0 10px 0; /* fixed image → caption gap */
+    cursor:pointer;
+}
+
+.caption{
+    font-size:12px;
+    color:#777;
+    margin-bottom:0;
+}
+
+/* DIVIDER */
+.divider{
+    text-align:center;
+    color:#444;
+    margin:80px 0;
+    letter-spacing:6px;
+}
+
+/* ABOUT */
+.about{
+    width:520px;
+    margin:120px auto 60px auto;
+    line-height:1.7;
+    font-size:14px;
+}
+
 .contact-btn{
     display:inline-block;
-    margin-top:40px;
+    margin-top:25px;
     border:1px solid #cc0000;
     padding:6px 14px;
     color:#cc0000;
@@ -66,46 +111,6 @@ body{
 .contact-btn:hover{
     background:#cc0000;
     color:#000;
-}
-
-/* ABOUT */
-.about{
-    width:520px;
-    margin:120px auto 60px auto;
-    line-height:1.7;
-    font-size:14px;
-}
-
-.section-title{
-    color:#d10000;
-    font-size:22px;
-    margin-bottom:25px;
-    letter-spacing:1px;
-}
-
-/* WORK */
-.work{
-    margin-bottom:120px;
-}
-
-.work img{
-    max-width:100%;
-    display:block;
-    margin-bottom:12px;
-    cursor:pointer;
-}
-
-.caption{
-    font-size:12px;
-    color:#777;
-}
-
-/* DIVIDER */
-.divider{
-    text-align:center;
-    color:#444;
-    margin:80px 0;
-    letter-spacing:6px;
 }
 
 /* FOOTER */
@@ -125,177 +130,113 @@ body{
 
 <!-- HEADER -->
 <div class="header">
+    <img class="site-title img" src="adamfalpwhite.jpg" alt="Adam Falp">
 
-    <div class="site-title">
-        <img src="adamfalpwhite.jpg" alt="Adam Falp">
-    </div>
-
-    <!-- NAV -->
     <div class="nav">
         <a href="#illustration">Illustration</a>
         <a href="#comics">Comics</a>
         <a href="#paintings">Paintings</a>
         <a href="https://YOUR-SHOP-LINK.com" target="_blank">Shop</a>
     </div>
-
 </div>
 
 <!-- ILLUSTRATION -->
-<div class="work" id="illustration">
+<div id="illustration">
+<div class="section-title">Illustration</div>
 
-    <div class="section-title">Illustration</div>
-
-    <a href="hendrix.jpg" target="_blank">
-        <img src="Hendrix.jpg" alt="Illustration">
-    </a>
-
-    <div class="caption">Jimi Hendrix Illustration, 2024.</div>
-
+<div class="work">
+    <a href="hendrix.jpg" target="_blank"><img src="Hendrix.jpg"></a>
+    <div class="caption">Jimi Hendrix Illustration, 2024</div>
 </div>
 
 <div class="work">
-
-    <a href="Riso.jpg" target="_blank">
-        <img src="Riso.jpg" alt="Illustration">
-    </a>
-
+    <a href="Riso.jpg" target="_blank"><img src="Riso.jpg"></a>
     <div class="caption">Four Colour Riso Print, 2024</div>
+</div>
 
-    <div class="work">
-
-    <a href="Bowieprint.jpg" target="_blank">
-        <img src="Bowieprint.jpg" alt="Illustration">
-    </a>
-
+<div class="work">
+    <a href="Bowieprint.jpg" target="_blank"><img src="Bowieprint.jpg"></a>
     <div class="caption">Three Colour Riso Print, 2025</div>
+</div>
 
-         <div class="work">
-
-    <a href="PennyGrabbers" target="_blank">
-        <img src="Pennygrabbers.jpg" alt="Illustration">
-    </a>
-
+<div class="work">
+    <a href="Pennygrabbers.jpg" target="_blank"><img src="Pennygrabbers.jpg"></a>
     <div class="caption">Cover for Penny Grabbers, 2026</div>
+</div>
 
-                  <div class="work">
-
-    <a href="Nickel" target="_blank">
-        <img src="nickel1.jpg" alt="Illustration">
-    </a>
-
+<div class="work">
+    <a href="nickel1.jpg" target="_blank"><img src="nickel1.jpg"></a>
     <div class="caption">Nickel Cinema Poster, 2025</div>
+</div>
 
-                                  <div class="work">
-
-    <a href="Nickel" target="_blank">
-        <img src="nickel2.jpg" alt="Illustration">
-    </a>
-
+<div class="work">
+    <a href="nickel2.jpg" target="_blank"><img src="nickel2.jpg"></a>
     <div class="caption">Nickel Cinema Poster, 2026</div>
+</div>
 
-                                                 <div class="work">
-
-    <a href="Screenprint" target="_blank">
-        <img src="Screenprint.jpg" alt="Illustration">
-    </a>
-
+<div class="work">
+    <a href="Screenprint.jpg" target="_blank"><img src="Screenprint.jpg"></a>
     <div class="caption">Violence Illustration, 2024</div>
+</div>
 </div>
 
 <div class="divider">• • •</div>
 
 <!-- COMICS -->
-<div class="work" id="comics">
+<div id="comics">
+<div class="section-title">Comics</div>
 
-    <div class="section-title">Comics</div>
-
-    <a href="LREC1.jpg" target="_blank">
-        <img src="LREC1.jpg" alt="Comic page">
-    </a>
-
+<div class="work">
+    <a href="LREC1.jpg" target="_blank"><img src="LREC1.jpg"></a>
     <div class="caption">Electric Chair #1</div>
-
 </div>
 
 <div class="work">
-
-    <a href="Electric Chair 2" target="_blank">
-        <img src="EC2.jpg" alt="Comic page">
-    </a>
-
+    <a href="EC2.jpg" target="_blank"><img src="EC2.jpg"></a>
     <div class="caption">Electric Chair #2</div>
-
 </div>
 
-                                      <div class="work">
-
-    <a href="Electric Chair 3" target="_blank">
-        <img src="LREC3.jpg" alt="Comic page">
-    </a>
-
+<div class="work">
+    <a href="LREC3.jpg" target="_blank"><img src="LREC3.jpg"></a>
     <div class="caption">Electric Chair #3</div>
+</div>
 
-                                                                             <div class="work">
-
-    <a href="Smokin' Bedroom #1" target="_blank">
-        <img src="SB1.jpg" alt="Comic page">
-    </a>
-
+<div class="work">
+    <a href="SB1.jpg" target="_blank"><img src="SB1.jpg"></a>
     <div class="caption">Smokin' Bedroom #1</div>
 </div>
-                                             <a href="Smokin' Bedroom #2" target="_blank">
-        <img src="SB2.jpg" alt="Comic page">
-    </a>
 
+<div class="work">
+    <a href="SB2.jpg" target="_blank"><img src="SB2.jpg"></a>
     <div class="caption">Smokin' Bedroom #2</div>
+</div>
+</div>
 
 <div class="divider">• • •</div>
 
 <!-- PAINTINGS -->
-<div class="work" id="paintings">
+<div id="paintings">
+<div class="section-title">Paintings</div>
 
-    <div class="section-title">Paintings</div>
-
-    <a href="painting1.jpg" target="_blank">
-        <img src="painting1.jpg" alt="Painting">
-    </a>
-
+<div class="work">
+    <a href="painting1.jpg" target="_blank"><img src="painting1.jpg"></a>
     <div class="caption">Oil on board</div>
-
 </div>
 
 <div class="work">
-
-    <a href="painting2.jpg" target="_blank">
-        <img src="painting2.jpg" alt="Painting">
-    </a>
-
+    <a href="painting2.jpg" target="_blank"><img src="painting2.jpg"></a>
     <div class="caption">Mixed media</div>
-
+</div>
 </div>
 
 <!-- ABOUT -->
 <div class="about">
-
     <div class="section-title">About</div>
 
-    <p>
-        Adam Falp is an artist, illustrator and cartoonist based in London.
-    </p>
+    <p>Adam Falp is an artist, illustrator and cartoonist based in London.</p>
+    <p>His work explores underground culture, crime, folklore, absurdity and the strange edges of contemporary Britain.</p>
 
-    <p>
-        His work explores underground culture, crime, folklore, absurdity and the strange edges of contemporary Britain.
-    </p>
-
-    <p>
-        Original paintings, comics and illustration projects appear here periodically.
-    </p>
-
-    <!-- CONTACT BUTTON -->
-    <a class="contact-btn" href="mailto:adamfalp1@yahoo.com">
-        Contact
-    </a>
-
+    <a class="contact-btn" href="mailto:adamfalp1@yahoo.com">Contact</a>
 </div>
 
 <!-- FOOTER -->
