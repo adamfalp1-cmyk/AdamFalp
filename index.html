@@ -1,29 +1,23 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Adam Falp</title>
+<title>Adam Falp Archive</title>
 
 <style>
 
-html{
-scroll-behavior:smooth;
+*{
+box-sizing:border-box;
 }
 
 body{
 
 margin:0;
-background:#090909;
+background:#070707;
+color:#d5d5d5;
 font-family:Arial,Helvetica,sans-serif;
-color:#d7d7d7;
-
-background:
-repeating-linear-gradient(
-45deg,
-#080808 0px,
-#080808 40px,
-#0d0d0d 40px,
-#0d0d0d 80px);
 
 }
 
@@ -31,121 +25,108 @@ repeating-linear-gradient(
 
 width:900px;
 margin:auto;
-padding:60px 0 120px;
+padding:50px 0 80px;
 
 }
 
-/* ---------------- HEADER ---------------- */
+/* ---------------- LOGO ---------------- */
 
 .logo{
 
 text-align:center;
-font-size:52px;
-letter-spacing:10px;
-font-weight:bold;
-margin-bottom:15px;
+margin-bottom:40px;
 
 }
 
-.subtitle{
+.logo img{
 
-text-align:center;
-color:#777;
-font-size:12px;
-letter-spacing:3px;
-margin-bottom:60px;
+max-width:320px;
 
 }
 
-/* ---------------- NAVIGATION ---------------- */
+/* ---------------- NAV ---------------- */
 
 nav{
 
 display:flex;
-margin-bottom:80px;
+margin-bottom:40px;
 
 }
 
-nav a{
+nav button{
 
 flex:1;
 
-background:#5d5b53;
+background:#666254;
+
+border:2px solid #2b2b2b;
 
 padding:18px;
 
-text-align:center;
-
-text-decoration:none;
-
-color:#ece8da;
-
-text-transform:uppercase;
+color:#eee;
 
 font-size:12px;
 
 letter-spacing:2px;
 
-border:2px solid #2c2c2c;
+text-transform:uppercase;
 
-transition:.18s;
+cursor:pointer;
 
-position:relative;
+transition:.2s;
 
 }
 
-nav a:hover{
+nav button:hover{
 
 transform:translateY(-6px);
 
-background:#7a7667;
-
-z-index:2;
-
-box-shadow:0 8px 18px rgba(0,0,0,.4);
+background:#807a68;
 
 }
 
-nav a:active{
+nav button:active{
 
 transform:translateY(2px);
 
 }
 
-/* ---------------- SECTION ---------------- */
+/* ---------------- LANDING ---------------- */
 
-section{
+#landing{
 
-margin-bottom:120px;
+text-align:center;
 
-}
-
-.section-title{
-
-display:inline-block;
-
-padding:12px 22px;
-
-border:2px solid #555;
-
-background:#111;
-
-letter-spacing:4px;
-
-font-size:14px;
-
-margin-bottom:35px;
-
-animation:slideUp .8s ease;
+transition:.4s;
 
 }
 
-@keyframes slideUp{
+#landing img{
+
+width:100%;
+display:block;
+border:2px solid #222;
+
+}
+
+/* ---------------- DRAWERS ---------------- */
+
+.drawer{
+
+display:none;
+
+animation:drop .45s ease;
+
+margin-top:30px;
+
+}
+
+@keyframes drop{
 
 from{
 
 opacity:0;
-transform:translateY(40px);
+transform:translateY(-20px);
 
 }
 
@@ -158,13 +139,31 @@ transform:none;
 
 }
 
+.drawer h2{
+
+display:inline-block;
+
+padding:12px 20px;
+
+border:2px solid #444;
+
+background:#111;
+
+letter-spacing:4px;
+
+font-size:14px;
+
+margin-bottom:40px;
+
+}
+
 /* ---------------- GALLERY ---------------- */
 
 .gallery{
 
 display:grid;
 
-grid-template-columns:1fr 1fr;
+grid-template-columns:repeat(2,1fr);
 
 gap:50px;
 
@@ -173,10 +172,7 @@ gap:50px;
 .work{
 
 position:relative;
-
 overflow:hidden;
-
-background:#111;
 
 }
 
@@ -187,7 +183,7 @@ display:block;
 
 }
 
-/* Museum label */
+/* Museum Label */
 
 .label{
 
@@ -197,7 +193,7 @@ left:0;
 right:0;
 bottom:-90px;
 
-background:rgba(0,0,0,.9);
+background:rgba(0,0,0,.92);
 
 padding:18px;
 
@@ -217,93 +213,38 @@ margin:0;
 
 font-size:15px;
 
-letter-spacing:2px;
-
 }
 
 .label p{
 
-margin:8px 0 0;
+margin-top:6px;
 
 font-size:12px;
 
-color:#aaa;
+color:#999;
 
 }
 
-/* ---------------- ABOUT ---------------- */
-
-.about-tab{
-
-display:inline-block;
-
-padding:12px 22px;
-
-border:2px solid #aa0000;
-
-cursor:pointer;
-
-background:#111;
-
-color:#cc4444;
-
-letter-spacing:3px;
-
-transition:.2s;
-
-}
-
-.about-tab:hover{
-
-background:#aa0000;
-
-color:black;
-
-}
+/* About */
 
 .about{
 
-max-height:0;
-
-overflow:hidden;
-
-transition:max-height .8s ease;
-
-margin-top:20px;
-
+max-width:620px;
 line-height:1.8;
 
-background:#111;
-
-padding:0 25px;
-
-border-left:2px solid #333;
-
 }
 
-.about.open{
-
-max-height:500px;
-
-padding:25px;
-
-}
-
-/* ---------------- FOOTER ---------------- */
-
-footer{
-
-margin-top:120px;
+.footer{
 
 text-align:center;
-
+margin-top:100px;
 color:#666;
-
 font-size:12px;
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -312,35 +253,39 @@ font-size:12px;
 
 <div class="logo">
 
-ADAM FALP
-
-</div>
-
-<div class="subtitle">
-
-UNDERGROUND COMICS • ILLUSTRATION • PRINT
+<img src="adamfalpwhite.jpg">
 
 </div>
 
 <nav>
 
-<a href="#illustration">Illustration</a>
+<button onclick="showSection('home')">Home</button>
 
-<a href="#comics">Comics</a>
+<button onclick="showSection('illustration')">Illustration</button>
 
-<a href="#paintings">Paintings</a>
+<button onclick="showSection('comics')">Comics</button>
 
-<a href="#about">About</a>
+<button onclick="showSection('paintings')">Paintings</button>
+
+<button onclick="showSection('about')">About</button>
 
 </nav>
 
-<section id="illustration">
+<!-- LANDING IMAGE -->
 
-<div class="section-title">
+<div id="landing">
 
-ILLUSTRATION
+<!-- CHANGE THIS IMAGE -->
+
+<img src="Falpy01.jpg" alt="Landing">
 
 </div>
+
+<!-- ILLUSTRATION -->
+
+<div class="drawer" id="illustration">
+
+<h2>ILLUSTRATION</h2>
 
 <div class="gallery">
 
@@ -352,7 +297,7 @@ ILLUSTRATION
 
 <h3>Jimi Hendrix</h3>
 
-<p>Ink & Digital • 2024</p>
+<p>Illustration • 2024</p>
 
 </div>
 
@@ -366,7 +311,7 @@ ILLUSTRATION
 
 <h3>Riso Print</h3>
 
-<p>Four colour print</p>
+<p>Four Colour</p>
 
 </div>
 
@@ -374,15 +319,13 @@ ILLUSTRATION
 
 </div>
 
-</section>
-
-<section id="comics">
-
-<div class="section-title">
-
-COMICS
-
 </div>
+
+<!-- COMICS -->
+
+<div class="drawer" id="comics">
+
+<h2>COMICS</h2>
 
 <div class="gallery">
 
@@ -416,58 +359,106 @@ COMICS
 
 </div>
 
-</section>
+</div>
 
-<section id="about">
+<!-- PAINTINGS -->
 
-<div class="about-tab" onclick="toggleAbout()">
+<div class="drawer" id="paintings">
 
-ABOUT +
+<h2>PAINTINGS</h2>
+
+<div class="gallery">
+
+<div class="work">
+
+<img src="Painting1.jpg">
+
+<div class="label">
+
+<h3>Dancers</h3>
+
+<p>Acrylic</p>
 
 </div>
 
-<div class="about" id="aboutPanel">
+</div>
+
+<div class="work">
+
+<img src="Painting2.jpg">
+
+<div class="label">
+
+<h3>Untitled</h3>
+
+<p>Mixed Media</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ABOUT -->
+
+<div class="drawer" id="about">
+
+<h2>ABOUT</h2>
+
+<div class="about">
 
 <p>
 
 Adam Falp is an artist, illustrator and cartoonist based in London.
 
-His work explores underground culture, psychedelia,
-DIY publishing, comics and printmaking.
-
 </p>
 
 <p>
 
-The website is intended to function like a small archive:
-part exhibition, part sketchbook, part filing cabinet.
+The archive contains illustration, comics, paintings and ongoing personal work.
 
 </p>
 
 </div>
 
-</section>
+</div>
 
-<footer>
+<div class="footer">
 
-© ADAM FALP
+© Adam Falp
 
-</footer>
+</div>
 
 </div>
 
 <script>
 
-function toggleAbout(){
+function showSection(section){
 
-document
-.getElementById("aboutPanel")
-.classList
-.toggle("open");
+const landing=document.getElementById("landing");
+
+const drawers=document.querySelectorAll(".drawer");
+
+drawers.forEach(drawer=>drawer.style.display="none");
+
+if(section==="home"){
+
+landing.style.display="block";
+
+return;
+
+}
+
+landing.style.display="none";
+
+document.getElementById(section).style.display="block";
 
 }
 
 </script>
 
 </body>
+
 </html>
