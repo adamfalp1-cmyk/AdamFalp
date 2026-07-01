@@ -1,464 +1,118 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adam Falp Archive</title>
-
 <style>
-
-*{
-box-sizing:border-box;
-}
-
-body{
-
-margin:0;
-background:#070707;
-color:#d5d5d5;
-font-family:Arial,Helvetica,sans-serif;
-
-}
-
-.container{
-
-width:900px;
-margin:auto;
-padding:50px 0 80px;
-
-}
-
-/* ---------------- LOGO ---------------- */
-
-.logo{
-
-text-align:center;
-margin-bottom:40px;
-
-}
-
-.logo img{
-
-max-width:320px;
-
-}
-
-/* ---------------- NAV ---------------- */
-
-nav{
-
-display:flex;
-margin-bottom:40px;
-
-}
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#080808;color:#ddd;font-family:Arial,Helvetica,sans-serif}
+header{text-align:center;padding:40px 20px}
+header img{max-width:320px;width:90%}
+#landing{max-width:900px;margin:20px auto;text-align:center;cursor:pointer;transition:.6s}
+#landing img{width:100%;display:block;border:2px solid #222}
+#landing p{color:#888;letter-spacing:4px}
+#archive{display:none;max-width:1000px;margin:auto;padding:0 20px 80px}
+nav{display:flex;gap:2px;position:sticky;top:0;background:#080808;padding:15px 0;z-index:10}
 nav button{
-
-flex:1;
-
-background:#666254;
-
-border:2px solid #2b2b2b;
-
-padding:18px;
-
-color:#eee;
-
-font-size:12px;
-
-letter-spacing:2px;
-
-text-transform:uppercase;
-
-cursor:pointer;
-
-transition:.2s;
-
-}
-
-nav button:hover{
-
-transform:translateY(-6px);
-
-background:#807a68;
-
-}
-
-nav button:active{
-
-transform:translateY(2px);
-
-}
-
-/* ---------------- LANDING ---------------- */
-
-#landing{
-
-text-align:center;
-
-transition:.4s;
-
-}
-
-#landing img{
-
-width:100%;
-display:block;
-border:2px solid #222;
-
-}
-
-/* ---------------- DRAWERS ---------------- */
-
-.drawer{
-
-display:none;
-
-animation:drop .45s ease;
-
-margin-top:30px;
-
-}
-
-@keyframes drop{
-
-from{
-
-opacity:0;
-transform:translateY(-20px);
-
-}
-
-to{
-
-opacity:1;
-transform:none;
-
-}
-
-}
-
-.drawer h2{
-
-display:inline-block;
-
-padding:12px 20px;
-
-border:2px solid #444;
-
-background:#111;
-
-letter-spacing:4px;
-
-font-size:14px;
-
-margin-bottom:40px;
-
-}
-
-/* ---------------- GALLERY ---------------- */
-
-.gallery{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:50px;
-
-}
-
-.work{
-
-position:relative;
-overflow:hidden;
-
-}
-
-.work img{
-
-width:100%;
-display:block;
-
-}
-
-/* Museum Label */
-
+flex:1;padding:16px;border:2px solid #222;background:#676252;color:#eee;
+cursor:pointer;text-transform:uppercase;letter-spacing:2px;transition:.2s}
+nav button:hover{transform:translateY(-4px)}
+nav button.active{background:#9a9070;color:#111;box-shadow:0 8px 16px rgba(0,0,0,.5);transform:translateY(-6px)}
+.drawer{display:none;animation:slide .4s ease}
+.drawer.active{display:block}
+@keyframes slide{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:35px;margin-top:30px}
+.work{position:relative;overflow:hidden;background:#111}
+.work img{width:100%;display:block}
 .label{
-
-position:absolute;
-
-left:0;
-right:0;
-bottom:-90px;
-
-background:rgba(0,0,0,.92);
-
-padding:18px;
-
-transition:.3s;
-
-}
-
-.work:hover .label{
-
-bottom:0;
-
-}
-
-.label h3{
-
-margin:0;
-
-font-size:15px;
-
-}
-
-.label p{
-
-margin-top:6px;
-
-font-size:12px;
-
-color:#999;
-
-}
-
-/* About */
-
-.about{
-
-max-width:620px;
-line-height:1.8;
-
-}
-
-.footer{
-
-text-align:center;
-margin-top:100px;
-color:#666;
-font-size:12px;
-
-}
-
+position:absolute;left:0;right:0;bottom:-90px;padding:18px;
+background:rgba(0,0,0,.9);transition:.3s}
+.work:hover .label{bottom:0}
+footer{margin-top:80px;padding-top:30px;border-top:1px solid #222;color:#999;line-height:1.7}
+a{color:#c55}
 </style>
-
 </head>
-
 <body>
 
-<div class="container">
+<header>
+<img src="adamfalpwhite.jpg" alt="Adam Falp">
+</header>
 
-<div class="logo">
+<section id="landing">
+<img src="Falpy01.jpg" alt="Enter the Archive">
+<p>ENTER THE ARCHIVE</p>
+</section>
 
-<img src="adamfalpwhite.jpg">
-
-</div>
+<section id="archive">
 
 <nav>
-
-<button onclick="showSection('home')">Home</button>
-
-<button onclick="showSection('illustration')">Illustration</button>
-
-<button onclick="showSection('comics')">Comics</button>
-
-<button onclick="showSection('paintings')">Paintings</button>
-
-<button onclick="showSection('about')">About</button>
-
+<button class="tab active" data-target="illustration">Illustration</button>
+<button class="tab" data-target="comics">Comics</button>
+<button class="tab" data-target="paintings">Paintings</button>
+<button id="aboutBtn">About</button>
 </nav>
 
-<!-- LANDING IMAGE -->
-
-<div id="landing">
-
-<!-- CHANGE THIS IMAGE -->
-
-<img src="Falpy01.jpg" alt="Landing">
-
-</div>
-
-<!-- ILLUSTRATION -->
-
-<div class="drawer" id="illustration">
-
-<h2>ILLUSTRATION</h2>
-
+<div id="illustration" class="drawer active">
 <div class="gallery">
-
-<div class="work">
-
-<img src="Hendrix.jpg">
-
-<div class="label">
-
-<h3>Jimi Hendrix</h3>
-
-<p>Illustration • 2024</p>
-
+<div class="work"><img src="Hendrix.jpg"><div class="label"><strong>Jimi Hendrix</strong><br>2024</div></div>
+<div class="work"><img src="Riso.jpg"><div class="label"><strong>Riso Print</strong><br>2024</div></div>
+<div class="work"><img src="Bowieprint.jpg"><div class="label"><strong>Bowie</strong><br>2025</div></div>
+<div class="work"><img src="Pennygrabbers.jpg"><div class="label"><strong>Penny Grabbers</strong></div></div>
+</div>
 </div>
 
-</div>
-
-<div class="work">
-
-<img src="Riso.jpg">
-
-<div class="label">
-
-<h3>Riso Print</h3>
-
-<p>Four Colour</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- COMICS -->
-
-<div class="drawer" id="comics">
-
-<h2>COMICS</h2>
-
+<div id="comics" class="drawer">
 <div class="gallery">
-
-<div class="work">
-
-<img src="SB1.jpg">
-
-<div class="label">
-
-<h3>Smokin' Bedroom #1</h3>
-
-<p>44 pages</p>
-
+<div class="work"><img src="SB1.jpg"><div class="label"><strong>Smokin' Bedroom #1</strong></div></div>
+<div class="work"><img src="SB2.jpg"><div class="label"><strong>Smokin' Bedroom #2</strong></div></div>
+<div class="work"><img src="LREC1.jpg"><div class="label"><strong>Electric Chair #1</strong></div></div>
+</div>
 </div>
 
-</div>
-
-<div class="work">
-
-<img src="SB2.jpg">
-
-<div class="label">
-
-<h3>Smokin' Bedroom #2</h3>
-
-<p>40 pages</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- PAINTINGS -->
-
-<div class="drawer" id="paintings">
-
-<h2>PAINTINGS</h2>
-
+<div id="paintings" class="drawer">
 <div class="gallery">
-
-<div class="work">
-
-<img src="Painting1.jpg">
-
-<div class="label">
-
-<h3>Dancers</h3>
-
-<p>Acrylic</p>
-
+<div class="work"><img src="Dancers-Adam Falp.jpg"><div class="label"><strong>Dancers</strong></div></div>
+<div class="work"><img src="painting2.jpg"><div class="label"><strong>Mixed Media</strong></div></div>
+</div>
 </div>
 
-</div>
+<footer id="about">
+<h2>About</h2>
+<p>Adam Falp is an artist, illustrator and cartoonist based in London. His work explores underground culture, psychedelia, absurdity and contemporary Britain.</p>
+<p><strong>Email:</strong> <a href="mailto:adamfalp1@yahoo.com">adamfalp1@yahoo.com</a></p>
+</footer>
 
-<div class="work">
-
-<img src="Painting2.jpg">
-
-<div class="label">
-
-<h3>Untitled</h3>
-
-<p>Mixed Media</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- ABOUT -->
-
-<div class="drawer" id="about">
-
-<h2>ABOUT</h2>
-
-<div class="about">
-
-<p>
-
-Adam Falp is an artist, illustrator and cartoonist based in London.
-
-</p>
-
-<p>
-
-The archive contains illustration, comics, paintings and ongoing personal work.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="footer">
-
-© Adam Falp
-
-</div>
-
-</div>
+</section>
 
 <script>
+const landing=document.getElementById('landing');
+const archive=document.getElementById('archive');
 
-function showSection(section){
+landing.onclick=()=>{
+ landing.style.opacity=0;
+ setTimeout(()=>{
+   landing.style.display='none';
+   archive.style.display='block';
+ },500);
+};
 
-const landing=document.getElementById("landing");
+document.querySelectorAll('.tab').forEach(btn=>{
+ btn.onclick=()=>{
+   document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+   btn.classList.add('active');
+   document.querySelectorAll('.drawer').forEach(d=>d.classList.remove('active'));
+   document.getElementById(btn.dataset.target).classList.add('active');
+   window.scrollTo({top:0,behavior:'smooth'});
+ };
+});
 
-const drawers=document.querySelectorAll(".drawer");
-
-drawers.forEach(drawer=>drawer.style.display="none");
-
-if(section==="home"){
-
-landing.style.display="block";
-
-return;
-
-}
-
-landing.style.display="none";
-
-document.getElementById(section).style.display="block";
-
-}
-
+document.getElementById('aboutBtn').onclick=()=>{
+ document.getElementById('about').scrollIntoView({behavior:'smooth'});
+};
 </script>
 
 </body>
-
 </html>
