@@ -6,154 +6,146 @@
 
 <style>
 
-body {
-    margin: 0;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    background: #000;
-    color: #fff;
+body{
+    margin:0;
+    background:#000;
+    color:#fff;
+    font-family:Georgia,"Times New Roman",serif;
 }
 
-/* WRAPPER */
-.wrapper {
-    width: 760px;
-    margin: 0 auto;
-    background: #000;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #fff;
+.wrapper{
+    width:760px;
+    margin:0 auto;
+    border-left:1px solid #fff;
+    border-right:1px solid #fff;
+    background:#000;
 }
 
-/* HEADER */
-.header {
-    text-align: center;
-    padding: 20px;
-    border-bottom: 1px solid #fff;
+.header{
+    text-align:center;
+    padding:20px;
+    border-bottom:1px solid #fff;
 }
 
-.header img {
-    max-width: 340px;
+.header img{
+    max-width:340px;
 }
 
-/* NAV */
-.nav {
-    text-align: center;
-    padding: 8px;
-    border-bottom: 1px solid #fff;
-    background: #111;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+.nav{
+    text-align:center;
+    padding:8px;
+    background:#111;
+    border-bottom:1px solid #fff;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:12px;
 }
 
-.nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #66aaff;
+.nav a{
+    color:#66aaff;
+    margin:0 10px;
+    text-decoration:none;
 }
 
-.nav a:hover {
-    text-decoration: underline;
+.nav a:hover{
+    text-decoration:underline;
 }
 
-/* MARQUEE */
-.marquee {
-    background: #000;
-    color: #ff0000;
-    padding: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    border-bottom: 1px solid #fff;
+.marquee{
+    background:#000;
+    color:red;
+    border-bottom:1px solid #fff;
+    padding:5px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:12px;
 }
 
-/* CATALOG TABLE */
-.catalog {
-    width: 100%;
-    border-collapse: collapse;
+/* CATALOG */
+
+.catalog{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
 }
 
-.catalog td {
-    vertical-align: top;
-    padding: 14px;
-    border-bottom: 1px solid #fff;
+.item{
+    border-right:1px solid #fff;
+    border-bottom:1px solid #fff;
+    padding:18px;
+    text-align:center;
 }
 
-.catalog img {
-    width: 140px;
-    height: auto;
-    border: 1px solid #fff;
+.item:nth-child(3n){
+    border-right:none;
 }
 
-/* TITLE */
-.title {
-    font-weight: bold;
-    font-size: 15px;
-    margin-bottom: 4px;
-    color: #fff;
+.item img{
+    width:180px;
+    max-width:100%;
+    border:1px solid #fff;
 }
 
-/* STOCK SYSTEM */
-.stock {
-    font-size: 11px;
-    font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
+.title{
+    font-weight:bold;
+    margin-top:12px;
+    margin-bottom:6px;
+    font-size:15px;
 }
 
-.instock {
-    color: #00ff66;
+.stock{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:11px;
+    margin-bottom:10px;
 }
 
-.lowstock {
-    color: #ffcc33;
+.instock{
+    color:#00ff66;
 }
 
-.soldout {
-    color: #ff4444;
-    text-decoration: line-through;
+.lowstock{
+    color:#ffcc33;
 }
 
-/* DESCRIPTION */
-.desc {
-    font-size: 13px;
-    line-height: 1.4;
-    color: #fff;
+.soldout{
+    color:#ff4444;
+    text-decoration:line-through;
 }
 
-/* ORDER BUTTON */
-.order-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 6px 12px;
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    color: #fff;
-    border: 1px solid #fff;
-    background: #000;
+.desc{
+    font-size:13px;
+    line-height:1.4;
+    margin-bottom:12px;
 }
 
-.order-btn:hover {
-    background: #fff;
-    color: #000;
+.order-btn{
+    display:inline-block;
+    padding:6px 14px;
+    border:1px solid #fff;
+    color:#fff;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:12px;
 }
 
-/* ABOUT */
-.about {
-    padding: 20px;
-    font-size: 13px;
-    border-top: 1px solid #fff;
-    color: #fff;
+.order-btn:hover{
+    background:#fff;
+    color:#000;
 }
 
-.about a {
-    color: #66aaff;
+.about{
+    padding:20px;
+    border-top:1px solid #fff;
 }
 
-/* FOOTER */
-.footer {
-    text-align: center;
-    font-size: 11px;
-    padding: 20px;
-    color: #999;
-    border-top: 1px solid #fff;
+.about a{
+    color:#66aaff;
+}
+
+.footer{
+    border-top:1px solid #fff;
+    text-align:center;
+    padding:20px;
+    font-size:11px;
+    color:#999;
 }
 
 </style>
@@ -164,105 +156,109 @@ body {
 
 <div class="wrapper">
 
-<!-- HEADER -->
 <div class="header">
-    <img src="afalplogo copy.jpg" alt="ADAM FALP STORE">
+<img src="afalplogo.jpg" alt="ADAM FALP">
 </div>
 
-<!-- NAV -->
 <div class="nav">
-    <a href="#catalog">CATALOG</a>
-    <a href="#about">ABOUT</a>
-    <a href="#about">CONTACT</a>
+<a href="#catalog">CATALOG</a>
+<a href="#about">ABOUT</a>
+<a href="#about">CONTACT</a>
 </div>
 
-<!-- MARQUEE -->
 <div class="marquee">
-    <marquee>
-        SMOKIN' BEDROOM NOW AVAILABLE • UNDERGROUND COMIX • RISO PRINTS • BACK ISSUES • PSYCHEDELIC ART •
-    </marquee>
+<marquee>
+SMOKIN' BEDROOM NOW AVAILABLE • LIMITED PRINT RUNS • MAIL ORDER ONLY • UNDERGROUND COMIX • PSYCHEDELIA •
+</marquee>
 </div>
 
-<!-- CATALOG -->
-<table class="catalog" id="catalog">
+<div class="catalog" id="catalog">
 
-<tr>
-    <td width="160">
-        <img src="SB 1 Cover.jpg" alt="Smokin' Bedroom #1">
-    </td>
-    <td>
-        <div class="title">Smokin' Bedroom #1</div>
-        <div class="stock instock">IN STOCK</div>
-        <div class="desc">
-            A gambling PI wades through a grim British underbelly of crooked gangsters, failed artists, deranged lovers, and bad decisions. Written and drawn by Adam Falp. 44 Pages, B + W.
-        </div>
-        <a class="order-btn"
-           href="https://square.link/u/X7i7AZWp"
-           target="_blank">
-           Order
-        </a>
-    </td>
-</tr>
+<div class="item">
+<img src="SB 1 Cover.jpg" alt="Smokin' Bedroom #1">
+<div class="title">Smokin' Bedroom #1</div>
+<div class="stock instock">IN STOCK</div>
+<div class="desc">
+A gambling PI explores Britain's grim underbelly.<br><br>
+44 Pages • B+W
+</div>
+<a class="order-btn" href="https://square.link/u/X7i7AZWp" target="_blank">ORDER</a>
+</div>
 
-<tr>
-    <td>
-        <img src="SB 2 Cover.jpg" alt="Smokin' Bedroom #2">
-    </td>
-    <td>
-        <div class="title">Smokin' Bedroom #2</div>
-        <div class="stock instock">IN STOCK</div>
-        <div class="desc">
-            Fraudulent footballers, a yearning useless artist, and an enraged pie entrepreneur tangle in a dark modern Britain where money and happiness are equally elusive and everyone is slightly unhinged. Written and drawn by Adam Falp. 40 Pages, B + W.
-        </div>
-        <a class="order-btn"
-           href="https://square.link/u/X7i7AZWp"
-           target="_blank">
-           Order
-        </a>
-    </td>
-</tr>
+<div class="item">
+<img src="SB 2 Cover.jpg" alt="Smokin' Bedroom #2">
+<div class="title">Smokin' Bedroom #2</div>
+<div class="stock instock">IN STOCK</div>
+<div class="desc">
+Football fraudsters, useless artists and pie entrepreneurs.<br><br>
+40 Pages • B+W
+</div>
+<a class="order-btn" href="https://square.link/u/X7i7AZWp" target="_blank">ORDER</a>
+</div>
 
-<tr>
-    <td>
-        <img src="retail park cover.jpg" alt="Retail Park">
-    </td>
-    <td>
-        <div class="title">Retail Park</div>
-        <div class="stock lowstock">LOW STOCK</div>
-        <div class="desc">
-            A three-way split comic featuring stories that all take place within the same retail park. Featuring Vincent Bell-Robertson, Adam Falp & Mat Greaves. 40 pages, Full Colour.
-        </div>
-        <a class="order-btn"
-           href="https://square.link/u/X7i7AZWp"
-           target="_blank">
-           Order
-        </a>
-    </td>
-</tr>
+<div class="item">
+<img src="retail park cover.jpg" alt="Retail Park">
+<div class="title">Retail Park</div>
+<div class="stock lowstock">LOW STOCK</div>
+<div class="desc">
+Three-way anthology by Vincent Bell-Robertson, Adam Falp & Mat Greaves.<br><br>
+40 Pages • Full Colour
+</div>
+<a class="order-btn" href="https://square.link/u/X7i7AZWp" target="_blank">ORDER</a>
+</div>
 
-</table>
+<!-- COPY THIS BLOCK TO ADD MORE BOOKS -->
 
-<!-- ABOUT -->
+<div class="item">
+<img src="placeholder.jpg" alt="">
+<div class="title">COMING SOON</div>
+<div class="stock soldout">COMING SOON</div>
+<div class="desc">
+Future release.
+</div>
+<a class="order-btn" href="#">COMING SOON</a>
+</div>
+
+<div class="item">
+<img src="placeholder.jpg" alt="">
+<div class="title">COMING SOON</div>
+<div class="stock soldout">COMING SOON</div>
+<div class="desc">
+Future release.
+</div>
+<a class="order-btn" href="#">COMING SOON</a>
+</div>
+
+<div class="item">
+<img src="placeholder.jpg" alt="">
+<div class="title">COMING SOON</div>
+<div class="stock soldout">COMING SOON</div>
+<div class="desc">
+Future release.
+</div>
+<a class="order-btn" href="#">COMING SOON</a>
+</div>
+
+</div>
+
 <div class="about" id="about">
 
 <h3>ABOUT</h3>
 
 <p>
-Adam Falp is an artist, illustrator and cartoonist based in London. His work draws inspiration from underground comix, psychedelia, noir fiction and the strange edges of contemporary Britain. His comics have been published internationally and are available directly through this web order catalogue.
+Adam Falp is an artist, illustrator and cartoonist based in London. His work explores underground culture, psychedelia, absurdity and contemporary Britain.
 </p>
 
 <h3>CONTACT</h3>
 
 <p>
-Email:
 <a href="mailto:adamfalp1@yahoo.com">adamfalp1@yahoo.com</a>
 </p>
 
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
-    © 2026 ADAM FALP
+© 2026 ADAM FALP
 </div>
 
 </div>
