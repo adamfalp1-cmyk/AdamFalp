@@ -1,271 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<title>ADAM FALP STORE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery</title>
 
 <style>
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: Georgia, "Times New Roman", Times, serif;
     background: #000;
     color: #fff;
-}
-
-/* WRAPPER */
-.wrapper {
-    width: 760px;
-    margin: 0 auto;
-    background: #000;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #fff;
-}
-
-/* HEADER */
-.header {
-    text-align: center;
-    padding: 20px;
-    border-bottom: 1px solid #fff;
-}
-
-.header img {
-    max-width: 340px;
-}
-
-/* NAV */
-.nav {
-    text-align: center;
-    padding: 8px;
-    border-bottom: 1px solid #fff;
-    background: #111;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
 }
 
-.nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #66aaff;
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 700px;
+    max-width: 90%;
+    margin: 80px auto;
+    text-align: center;
 }
 
-.nav a:hover {
-    text-decoration: underline;
+
+/* =========================
+   3 x 3 STICKER GRID
+========================= */
+
+.grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 150px);
+
+    gap: 25px;
+
+    justify-content: center;
 }
 
-/* MARQUEE */
-.marquee {
-    background: #000;
-    color: #ff0000;
-    padding: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    border-bottom: 1px solid #fff;
+
+/* =========================
+   EACH ALBUM SLOT
+========================= */
+
+.slot {
+
+    width: 150px;
+
+    aspect-ratio: 2 / 3;
+
+    border: 1px solid #333;
+
+    background: #050505;
+
+    position: relative;
+
 }
 
-/* CATALOG TABLE */
-.catalog {
+
+/* =========================
+   IMAGES
+========================= */
+
+.slot a {
+
+    display: block;
+
     width: 100%;
-    border-collapse: collapse;
+
+    height: 100%;
+
+    opacity: 0;
+
+    animation: fadeIn 1s ease forwards;
+
 }
 
-.catalog td {
-    vertical-align: top;
-    padding: 14px;
-    border-bottom: 1px solid #fff;
+
+.slot img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.3s ease;
+
 }
 
-.catalog img {
-    width: 140px;
-    height: auto;
-    border: 1px solid #fff;
+
+.slot a:hover img {
+
+    opacity: 0.7;
+
+    transform: scale(1.02);
+
 }
 
-/* TITLE */
-.title {
-    font-weight: bold;
-    font-size: 15px;
-    margin-bottom: 4px;
-    color: #fff;
+
+/* =========================
+   FADE-IN TIMING
+========================= */
+
+.slot:nth-child(1) a {
+    animation-delay: 0.1s;
 }
 
-/* STOCK SYSTEM */
-.stock {
-    font-size: 11px;
-    font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
+.slot:nth-child(2) a {
+    animation-delay: 0.2s;
 }
 
-.instock {
-    color: #00ff66;
+.slot:nth-child(3) a {
+    animation-delay: 0.3s;
 }
 
-.lowstock {
-    color: #ffcc33;
+.slot:nth-child(4) a {
+    animation-delay: 0.4s;
 }
 
-.soldout {
-    color: #ff4444;
-    text-decoration: line-through;
+
+/* =========================
+   FADE ANIMATION
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
 }
 
-/* DESCRIPTION */
-.desc {
-    font-size: 13px;
-    line-height: 1.4;
-    color: #fff;
-}
 
-/* ORDER BUTTON */
-.order-btn {
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back {
+
     display: inline-block;
-    margin-top: 10px;
-    padding: 6px 12px;
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
+
+    margin-top: 50px;
+
+    padding: 12px 30px;
+
+    border: 1px solid #555;
+
+    color: #fff;
+
     text-decoration: none;
-    color: #fff;
-    border: 1px solid #fff;
-    background: #000;
-}
 
-.order-btn:hover {
-    background: #fff;
-    color: #000;
-}
-
-/* ABOUT */
-.about {
-    padding: 20px;
     font-size: 13px;
-    border-top: 1px solid #fff;
-    color: #fff;
+
+    letter-spacing: 3px;
+
+    transition: 0.2s;
+
 }
 
-.about a {
-    color: #66aaff;
+
+.back:hover {
+
+    background: #fff;
+
+    color: #000;
+
 }
 
-/* FOOTER */
-.footer {
-    text-align: center;
-    font-size: 11px;
-    padding: 20px;
-    color: #999;
-    border-top: 1px solid #fff;
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .grid {
+
+        grid-template-columns: repeat(2, 130px);
+
+        gap: 20px;
+
+    }
+
+    .slot {
+
+        width: 130px;
+
+    }
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
-<div class="wrapper">
 
-<!-- HEADER -->
-<div class="header">
-    <img src="afalplogo copy.jpg" alt="ADAM FALP STORE">
-</div>
+<div class="container">
 
-<!-- NAV -->
-<div class="nav">
-    <a href="#catalog">CATALOG</a>
-    <a href="#about">ABOUT</a>
-    <a href="#about">CONTACT</a>
-</div>
 
-<!-- MARQUEE -->
-<div class="marquee">
-    <marquee>
-        SMOKIN' BEDROOM NOW AVAILABLE • UNDERGROUND COMIX • RISO PRINTS • BACK ISSUES • PSYCHEDELIC ART •
-    </marquee>
-</div>
+<div class="grid">
 
-<!-- CATALOG -->
-<table class="catalog" id="catalog">
 
-<tr>
-    <td width="160">
-        <img src="SB 1 Cover.jpg" alt="Smokin' Bedroom #1">
-    </td>
-    <td>
-        <div class="title">Smokin' Bedroom #1</div>
-        <div class="stock instock">IN STOCK</div>
-        <div class="desc">
-            A gambling PI wades through a grim British underbelly of crooked gangsters, failed artists, deranged lovers, and bad decisions. Written and drawn by Adam Falp. 44 Pages, B + W.
-        </div>
-        <a class="order-btn"
-           href="https://square.link/u/X7i7AZWp"
-           target="_blank">
-           Order
-        </a>
-    </td>
-</tr>
+<!-- =========================
+     SLOT 1 — IMAGE
+========================= -->
 
-<tr>
-    <td>
-        <img src="SB 2 Cover.jpg" alt="Smokin' Bedroom #2">
-    </td>
-    <td>
-        <div class="title">Smokin' Bedroom #2</div>
-        <div class="stock instock">IN STOCK</div>
-        <div class="desc">
-            Fraudulent footballers, a yearning useless artist, and an enraged pie entrepreneur tangle in a dark modern Britain where money and happiness are equally elusive and everyone is slightly unhinged. Written and drawn by Adam Falp. 40 Pages, B + W.
-        </div>
-        <a class="order-btn"
-           href="https://square.link/u/X7i7AZWp"
-           target="_blank">
-           Order
-        </a>
-    </td>
-</tr>
+<div class="slot">
 
-<tr>
-    <td>
-        <img src="retail park cover.jpg" alt="Retail Park">
-    </td>
-    <td>
-        <div class="title">Retail Park</div>
-        <div class="stock lowstock">LOW STOCK</div>
-        <div class="desc">
-            A three-way split comic featuring stories that all take place within the same retail park. Featuring Vincent Bell-Robertson, Adam Falp & Mat Greaves. 40 pages, Full Colour.
-        </div>
-        <a class="order-btn"
-           href="https://square.link/u/X7i7AZWp"
-           target="_blank">
-           Order
-        </a>
-    </td>
-</tr>
+<a href="page1.html">
 
-</table>
+<img src="LREC1.jpg" alt="1">
 
-<!-- ABOUT -->
-<div class="about" id="about">
-
-<h3>ABOUT</h3>
-
-<p>
-Adam Falp is an artist, illustrator and cartoonist based in London. His work draws inspiration from underground comix, psychedelia, noir fiction and the strange edges of contemporary Britain. His comics have been published internationally and are available directly through this web order catalogue.
-</p>
-
-<h3>CONTACT</h3>
-
-<p>
-Email:
-<a href="mailto:adamfalp1@yahoo.com">adamfalp1@yahoo.com</a>
-</p>
+</a>
 
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-    © 2026 ADAM FALP
-</div>
+
+
+<!-- =========================
+     SLOT 2 — IMAGE
+========================= -->
+
+<div class="slot">
+
+<a href="page2.html">
+
+<img src="EC2.jpg" alt="2">
+
+</a>
 
 </div>
+
+
+
+<!-- =========================
+     SLOT 3 — IMAGE
+========================= -->
+
+<div class="slot">
+
+<a href="page3.html">
+
+<img src="LREC3.jpg" alt="Image 3">
+
+</a>
+
+</div>
+
+
+
+<!-- =========================
+     SLOT 4 — IMAGE
+========================= -->
+
+<div class="slot">
+
+<a href="page4.html">
+
+<img src="LREC4.jpg" alt="4">
+
+</a>
+
+</div>
+
+
+
+<!-- =========================
+     SLOT 5 — EMPTY
+========================= -->
+
+<div class="slot"></div>
+
+
+
+<!-- =========================
+     SLOT 6 — EMPTY
+========================= -->
+
+<div class="slot"></div>
+
+
+
+<!-- =========================
+     SLOT 7 — EMPTY
+========================= -->
+
+<div class="slot"></div>
+
+
+
+<!-- =========================
+     SLOT 8 — EMPTY
+========================= -->
+
+<div class="slot"></div>
+
+
+
+<!-- =========================
+     SLOT 9 — EMPTY
+========================= -->
+
+<div class="slot"></div>
+
+
+</div>
+
+
+<!-- =========================
+     BACK BUTTON
+========================= -->
+
+<a class="back" href="index.html">
+
+BACK
+
+</a>
+
+
+</div>
+
 
 </body>
 </html>
