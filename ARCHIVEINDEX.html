@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 700px;
+    max-width: 90%;
+    margin: 80px auto;
+    text-align: center;
+}
+
+
+/* =========================
+   3 x 3 STICKER GRID
+========================= */
+
+.grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 150px);
+
+    gap: 25px;
+
+    justify-content: center;
+}
+
+
+/* =========================
+   EACH ALBUM SLOT
+========================= */
+
+.slot {
+
+    width: 150px;
+
+    aspect-ratio: 2 / 3;
+
+    border: 1px solid #333;
+
+    background: #050505;
+
+    position: relative;
+
+}
+
+
+/* =========================
+   IMAGES
+========================= */
+
+.slot a {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    opacity: 0;
+
+    animation: fadeIn 1s ease forwards;
+
+}
+
+
+.slot img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.3s ease;
+
+}
+
+
+.slot a:hover img {
+
+    opacity: 0.7;
+
+    transform: scale(1.02);
+
+}
+
+
+/* =========================
+   FADE-IN TIMING
+========================= */
+
+.slot:nth-child(1) a {
+    animation-delay: 0.1s;
+}
+
+.slot:nth-child(2) a {
+    animation-delay: 0.2s;
+}
+
+.slot:nth-child(3) a {
+    animation-delay: 0.3s;
+}
+
+.slot:nth-child(4) a {
+    animation-delay: 0.4s;
+}
+
+
+/* =========================
+   FADE ANIMATION
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back {
+
+    display: inline-block;
+
+    margin-top: 50px;
+
+    padding: 12px 30px;
+
+    border: 1px solid #555;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    transition: 0.2s;
+
+}
+
+
+.back:hover {
+
+    background: #fff;
+
+    color: #000;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .grid {
+
+        grid-template-columns: repeat(2, 130px);
+
+        gap: 20px;
+
+    }
+
+    .slot {
+
+        width: 130px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="grid">
+
+
+<!-- =========================
+     SLOT 1 — IMAGE
+========================= -->
+
+<div class="slot">
+
+<a href="page1.html">
+
+<img src="retail park cover.jpg" alt="1">
+
+</a>
+
+</div>
+
+
+
+<!-- =========================
+     SLOT 2 — IMAGE
+========================= -->
+
+<div class="slot">
+
+<a href="page2.html">
+
+<img src="Flith Cover.jpg" alt="2">
+
+</a>
+
+</div>
+
+
+
+<!-- =========================
+     SLOT 3 — IMAGE
+========================= -->
+
+<div class="slot">
+
+
+  
+<!-- =========================
+     SLOT 4 — IMAGE
+========================= -->
+
+<div class="slot">
+
+  
+
+
+<!-- =========================
+     SLOT 5 — EMPTY
+========================= -->
+
+<div class="slot"></div>
+
+
+
+<!-- =========================
+     SLOT 6 — EMPTY
+========================= -->
+
+<div class="slot"></div>
+
+
+
+<!-- =========================
+     SLOT 7 — EMPTY
+========================= -->
+
+<div class="slot"></div>
+
+
+
+<!-- =========================
+     SLOT 8 — EMPTY
+========================= -->
+
+<div class="slot"></div>
+
+
+
+<!-- =========================
+     SLOT 9 — EMPTY
+========================= -->
+
+<div class="slot"></div>
+
+
+</div>
+
+
+<!-- =========================
+     BACK BUTTON
+========================= -->
+
+<a class="back" href="Comics.html">
+
+BACK
+
+</a>
+
+
+</div>
+
+
+</body>
+</html>
