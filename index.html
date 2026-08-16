@@ -29,51 +29,37 @@ font-family:Arial, Helvetica, sans-serif;
    INTRO
 ===================== */
 
-#intro{
+#intro {
+    position: fixed;
+    inset: 0;
 
-position:fixed;
-inset:0;
+    background: #080808;
 
-background:#080808;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
+    z-index: 1000;
 
-z-index:1000;
+    opacity: 1;
 
-cursor:pointer;
-
+    transition: opacity 1s ease;
 }
 
 
-#logo{
+/* PORTRAIT GIF */
 
-width:580px;
-max-width:180vw;
+#introGif {
+    width: 300px;
+    height: 450px;
 
+    max-width: 70vw;
+    max-height: 75vh;
 
-transition:
-top 1.5s cubic-bezier(.68,-0.55,.27,1.55),
-left 1.5s cubic-bezier(.68,-0.55,.27,1.55),
-transform 1.5s cubic-bezier(.68,-0.55,.27,1.55);
+    object-fit: contain;
 
+    display: block;
 }
-
-
-#enterText{
-
-margin-top:25px;
-
-color:#777;
-
-font-size:12px;
-
-letter-spacing:5px;
-
-}
-
 
 
 /* =====================
@@ -330,11 +316,7 @@ color:#c55;
 
 <div id="intro">
 
-<img id="logo" src="aflogo2.jpg" alt="Adam Falp">
-
-<div id="enterText">
-CLICK TO ENTER
-</div>
+    <img id="introGif" src="aflogo.jpg" alt="">
 
 </div>
 
@@ -553,65 +535,42 @@ adamfalp1@yahoo.com
 </div>
 <script>
 
-
 /* =====================
-   LOGO INTRO ANIMATION
+   GIF INTRO
 ===================== */
 
-
 const intro = document.getElementById("intro");
-const logo = document.getElementById("logo");
 const site = document.getElementById("site");
-const enterText = document.getElementById("enterText");
 
-if(window.location.hash=="#illustration"){
 
-    intro.style.display="none";
-    site.style.opacity="1";
+/* Skip intro when returning to Illustration */
+
+if(window.location.hash == "#illustration"){
+
+    intro.style.display = "none";
+    site.style.opacity = "1";
 
 }
 
 
-intro.onclick = () => {
+/* Play intro for 3.5 seconds */
 
+else {
 
-    // fade out enter text
-    enterText.style.opacity = "0";
-
-
-    // move logo upwards
-    logo.style.position = "absolute";
-    logo.style.top = "40px";
-    logo.style.left = "50%";
-    logo.style.transform = "translateX(-50%) scale(.67)";
-
-
-    setTimeout(()=>{
-
+    setTimeout(() => {
 
         intro.style.opacity = "0";
 
+        setTimeout(() => {
 
-    },900);
+            intro.style.display = "none";
+            site.style.opacity = "1";
 
+        }, 1200);
 
+    }, 3500);
 
-    setTimeout(()=>{
-
-
-        intro.style.display="none";
-
-        site.style.opacity="1";
-
-
-    },1400);
-
-
-};
-
-
-
-
+}
 
 /* =====================
    TAB SYSTEM
