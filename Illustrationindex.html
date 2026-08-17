@@ -82,12 +82,22 @@ body {
 
 
 /* =========================
-   LABEL
+   SLIDING LABEL
 ========================= */
 
 .label {
 
-    padding: 12px 4px 5px;
+    position: absolute;
+
+    left: 1px;
+
+    right: 1px;
+
+    bottom: -80px;
+
+    padding: 15px;
+
+    background: rgba(0, 0, 0, 0.92);
 
     color: white;
 
@@ -96,6 +106,15 @@ body {
     line-height: 1.5;
 
     letter-spacing: 1px;
+
+    transition: bottom 0.3s ease;
+
+}
+
+
+.work:hover .label {
+
+    bottom: 1px;
 
 }
 
@@ -108,32 +127,16 @@ body {
 
 
 /* =========================
-   HOVER
-========================= */
-
-.work img {
-
-    transition: opacity 0.25s ease;
-
-}
-
-
-.work:hover img {
-
-    opacity: 0.75;
-
-}
-
-
-/* =========================
    BACK BUTTON
 ========================= */
 
 .back {
 
-    display: inline-block;
+    display: block;
 
-    margin-top: 40px;
+    width: 180px;
+
+    margin: 40px auto 0;
 
     padding: 12px 30px;
 
@@ -144,6 +147,8 @@ body {
     background: black;
 
     text-decoration: none;
+
+    text-align: center;
 
     font-size: 13px;
 
@@ -198,14 +203,12 @@ body {
 <div class="container">
 
 
-<!-- =========================
-     ILLUSTRATION GALLERY
-========================= -->
-
 <div class="gallery">
 
 
-<!-- 01 -->
+<!-- =========================
+     01
+========================= -->
 
 <div class="work">
 
@@ -223,7 +226,9 @@ body {
 
 
 
-<!-- 02 -->
+<!-- =========================
+     02
+========================= -->
 
 <div class="work">
 
@@ -241,7 +246,9 @@ body {
 
 
 
-<!-- 03 -->
+<!-- =========================
+     03
+========================= -->
 
 <div class="work">
 
@@ -259,7 +266,9 @@ body {
 
 
 
-<!-- 04 -->
+<!-- =========================
+     04
+========================= -->
 
 <div class="work">
 
@@ -277,7 +286,9 @@ body {
 
 
 
-<!-- 05 -->
+<!-- =========================
+     05
+========================= -->
 
 <div class="work">
 
@@ -295,7 +306,9 @@ body {
 
 
 
-<!-- 06 -->
+<!-- =========================
+     06
+========================= -->
 
 <div class="work">
 
@@ -313,7 +326,9 @@ body {
 
 
 
-<!-- 07 -->
+<!-- =========================
+     07
+========================= -->
 
 <div class="work">
 
@@ -331,7 +346,9 @@ body {
 
 
 
-<!-- 08 -->
+<!-- =========================
+     08
+========================= -->
 
 <div class="work">
 
@@ -349,7 +366,9 @@ body {
 
 
 
-<!-- 09 -->
+<!-- =========================
+     09
+========================= -->
 
 <div class="work">
 
@@ -367,7 +386,9 @@ body {
 
 
 
-<!-- 10 — ADD NEXT IMAGE HERE -->
+<!-- =========================
+     10 — ADD FUTURE IMAGE HERE
+========================= -->
 
 <!--
 
@@ -392,7 +413,7 @@ body {
 
 
 <!-- =========================
-     BACK
+     BACK BUTTON
 ========================= -->
 
 <a class="back" href="index.html">
