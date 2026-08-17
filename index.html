@@ -5,304 +5,188 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Adam Falp Archive</title>
+<title>Adam Falp</title>
 
 <style>
 
-*{
-box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
-body{
-margin:0;
-background:#080808;
-color:#ddd;
-font-family:Arial, Helvetica, sans-serif;
+body {
+    margin: 0;
+    background: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 
 
-/* =====================
-   INTRO
-===================== */
+/* =========================
+   MAIN CONTAINER
+========================= */
 
-#intro {
-    position: fixed;
-    inset: 0;
+.container {
+    width: 700px;
+    max-width: 90%;
+    margin: 120px auto;
 
-    background: #080808;
+    border: 1px solid white;
 
+    padding: 20px;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+    width: 100%;
+}
+
+.image-cell {
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.menu-cell {
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+/* =========================
+   GIF / IMAGE
+========================= */
+
+#visual {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    z-index: 1000;
-
-    opacity: 1;
-
-    transition: opacity 1s ease;
+    min-height: 400px;
 }
 
-
-/* PORTRAIT GIF */
-
-#introGif {
-    width: 300px;
-    height: 450px;
-
-    max-width: 70vw;
-    max-height: 75vh;
-
-    object-fit: contain;
+#visual img {
+    width: 280px;
+    max-width: 100%;
 
     display: block;
+
+    border: 1px solid white;
 }
 
 
-/* =====================
-   MAIN SITE
-===================== */
+/* =========================
+   ABOUT TEXT
+========================= */
 
+.about-text {
 
-#site{
+    padding: 20px;
 
-opacity:0;
+    font-size: 13px;
 
-transition:opacity 1s ease;
+    line-height: 1.6;
 
+    text-align: left;
+
+    min-height: 400px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
 }
 
 
-#header{
+/* =========================
+   NAVIGATION BUTTONS
+========================= */
 
-text-align:center;
+.menu-button {
 
-padding:40px 20px;
+    display: block;
 
-}
+    width: 180px;
 
+    margin: 15px auto;
 
-#header img{
+    padding: 10px;
 
-max-width:320px;
+    color: white;
 
-width:90%;
+    background: black;
 
-}
+    border: 1px solid white;
 
+    text-decoration: none;
 
+    font-size: 14px;
 
-#archive{
+    letter-spacing: 2px;
 
-max-width:1000px;
-
-margin:auto;
-
-padding:0 20px 80px;
-
-border:1px solid #333;
-
-}
-
-
-
-/* =====================
-   NAVIGATION
-===================== */
-
-
-nav{
-
-display:flex;
-
-gap:2px;
-
-position:sticky;
-
-top:0;
-
-background:#080808;
-
-padding:15px 0;
-
-z-index:10;
+    transition: 0.2s;
 
 }
 
 
-nav button{
+.menu-button:hover {
 
-flex:1;
+    background: white;
 
-padding:16px;
-
-border:2px solid #222;
-
-background:#4c4b4a;
-
-color:#eee;
-
-cursor:pointer;
-
-text-transform:uppercase;
-
-letter-spacing:2px;
-
-transition:.2s;
+    color: black;
 
 }
 
 
-nav button:hover{
+/* =========================
+   EMAIL
+========================= */
 
-transform:translateY(-4px);
+.about-text a {
 
-}
-
-
-nav button.active{
-
-background:#85837b;
-
-color:#444;
-
-box-shadow:0 8px 16px rgba(0,0,0,.5);
-
-transform:translateY(-6px);
+    color: white;
 
 }
 
 
+/* =========================
+   MOBILE
+========================= */
 
-/* =====================
-   CONTENT
-===================== */
+@media (max-width: 650px) {
 
+    .container {
 
-.drawer{
+        margin: 40px auto;
 
-display:none;
+    }
 
-animation:slide .4s ease;
+    table,
+    tr,
+    td {
 
-}
+        display: block;
 
+        width: 100%;
 
-.drawer.active{
+    }
 
-display:block;
+    .image-cell {
 
-}
+        margin-bottom: 30px;
 
+    }
 
-@keyframes slide{
+    .menu-button {
 
-from{
+        width: 200px;
 
-opacity:0;
-
-transform:translateY(20px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:none;
-
-}
-
-}
-
-
-
-.gallery{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-gap:35px;
-
-margin-top:30px;
-
-}
-
-
-
-.work{
-
-position:relative;
-
-overflow:hidden;
-
-background:#111;
-
-}
-
-
-
-.work img{
-
-width:100%;
-
-display:block;
-
-}
-
-
-
-.label{
-
-position:absolute;
-
-left:0;
-
-right:0;
-
-bottom:-90px;
-
-padding:18px;
-
-background:rgba(0,0,0,.9);
-
-transition:.3s;
-
-}
-
-
-
-.work:hover .label{
-
-bottom:0;
-
-}
-
-
-
-footer{
-
-margin-top:80px;
-
-padding-top:30px;
-
-border-top:1px solid #222;
-
-color:#999;
-
-line-height:1.7;
-
-}
-
-
-
-a{
-
-color:#c55;
+    }
 
 }
 
@@ -314,336 +198,143 @@ color:#c55;
 <body>
 
 
-<div id="intro">
-
-    <img id="introGif" src="aflogo.jpg" alt="">
-
-</div>
+<div class="container">
 
 
-<div id="site">
+<table cellpadding="10">
+
+<tr>
 
 
-<header id="header">
+<!-- =========================
+     IMAGE / ABOUT AREA
+========================= -->
 
-<img src="aflogo2.jpg" alt="Adam Falp">
+<td class="image-cell">
 
-</header>
+<div id="visual">
 
-
-<section id="archive">
-
-
-<nav>
-
-<button class="tab active" data-target="illustration">
-Illustration
-</button>
-
-<button onclick="window.location.href='Comics.html'">
-Comics
-</button>
-
-<button class="tab" data-target="painting">
-Painting
-</button>
-
-<button onclick="window.location.href='shop.html'">
-Shop
-</button>
-
-<button id="aboutBtn">
-About
-</button>
-
-</nav>
- 
-<!-- =====================
-     ILLUSTRATION
-===================== -->
-
-<div id="illustration" class="drawer active">
-
-<div class="gallery">
-
-
-<div class="work">
-<img src="Hendrix.jpg">
-<div class="label">
-<strong>Jimi Hendrix</strong><br>
-2024
-</div>
-</div>
-
-   
-<div class="work">
-<img src="HireathAlbumcover.jpg">
-<div class="label">
-<strong>Hireath Album cover</strong><br>
-2025
-</div>
-</div>
-
-   
-<div class="work">
-<img src="rpg.jpg">
-<div class="label">
-<strong>RPG Illustration</strong><br>
-2026
-</div>
-</div>
-
-   
-<div class="work">
-<img src="Bowieprint.jpg">
-<div class="label">
-<strong>Bowie Print</strong><br>
-2025
-</div>
-</div>
-   
-     
-<div class="work">
-<img src="Risocloseup.jpg">
-<div class="label">
-<strong>Riso Print</strong><br>
-2024
-</div>
-</div>
-
-
-<div class="work">
-<img src="Pennygrabbers.jpg">
-<div class="label">
-<strong>Penny Grabbers</strong><br>
-2025
-</div>
-</div>
-
-
-<div class="work">
-<img src="nickel1.jpg">
-<div class="label">
-<strong>Nickel Cinema Advert</strong><br>
-2025
-</div>
-</div>
-
-
-<div class="work">
-<img src="nickel2.jpg">
-<div class="label">
-<strong>Nickel Cinema Advert</strong><br>
-2026
-</div>
-</div>
-
-
-<div class="work">
-<img src="Screenprint.jpg">
-<div class="label">
-<strong>Screenprint</strong><br>
-2024
-</div>
-</div>
-
+    <img src="COMIC.jpg" alt="Adam Falp">
 
 </div>
 
-</div>
+</td>
 
 
 
-<!-- =====================
-     PAINTING
-===================== -->
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<td class="menu-cell">
 
 
-<div id="painting" class="drawer">
-
-<div class="gallery">
-
-
-<div class="work">
-
-<img src="Dancers-Adam Falp.jpg">
-
-<div class="label">
-
-<strong>Dancers</strong>
-
-</div>
-
-</div>
-
-
-
-<div class="work">
-
-<img src="painting2.jpg">
-
-<div class="label">
-
-<strong>Mixed Media</strong>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
-<!-- =====================
-     ABOUT
-===================== -->
-
-
-<footer id="ABOUT">
-
-<h2>
-ABOUT
-</h2>
-
-
-<p>
-Adam Falp is an artist, illustrator and cartoonist based in London. His work explores underground culture, psychedelia, absurdity and contemporary Britain.
-</p>
-
-
-<p>
-<strong>Email:</strong>
-
-<a href="mailto:adamfalp1@yahoo.com">
-adamfalp1@yahoo.com
+<a class="menu-button" href="illustration.html">
+ILLUSTRATION
 </a>
 
-</p>
+
+<a class="menu-button" href="painting.html">
+PAINTING
+</a>
 
 
-</footer>
+<a class="menu-button" href="Comics.html">
+COMICS
+</a>
 
 
+<a class="menu-button" href="shop.html">
+SHOP
+</a>
 
-</section>
+
+<a class="menu-button" href="#" id="aboutButton">
+ABOUT
+</a>
+
+
+</td>
+
+
+</tr>
+
+</table>
 
 
 </div>
+
+
+
+<!-- =========================
+     ABOUT SCRIPT
+========================= -->
+
 <script>
 
-/* =====================
-   GIF INTRO
-===================== */
+const aboutButton = document.getElementById("aboutButton");
 
-const intro = document.getElementById("intro");
-const site = document.getElementById("site");
+const visual = document.getElementById("visual");
 
 
-/* Skip intro when returning to Illustration */
-
-if(window.location.hash == "#illustration"){
-
-    intro.style.display = "none";
-    site.style.opacity = "1";
-
-}
+let showingAbout = false;
 
 
-/* Play intro for 3.5 seconds */
+aboutButton.addEventListener("click", function(event) {
 
-else {
-
-    setTimeout(() => {
-
-        intro.style.opacity = "0";
-
-        setTimeout(() => {
-
-            intro.style.display = "none";
-            site.style.opacity = "1";
-
-        }, 1200);
-
-    }, 3500);
-
-}
-
-/* =====================
-   TAB SYSTEM
-===================== */
+    event.preventDefault();
 
 
-document.querySelectorAll('.tab').forEach(btn=>{
+    if (!showingAbout) {
 
 
-btn.onclick=()=>{
+        visual.innerHTML = `
+
+            <div class="about-text">
+
+                <strong>ADAM FALP</strong>
+
+                <br>
+
+                Artist, illustrator and cartoonist based in London.
+
+                <br><br>
+
+                His work explores underground culture,
+                psychedelia, absurdity and contemporary Britain.
+
+                <br><br>
+
+                <a href="mailto:adamfalp1@yahoo.com">
+                adamfalp1@yahoo.com
+                </a>
+
+            </div>
+
+        `;
 
 
-    document.querySelectorAll('.tab')
-    .forEach(b=>b.classList.remove('active'));
+        showingAbout = true;
 
 
-    btn.classList.add('active');
+    } else {
 
 
+        visual.innerHTML = `
 
-    document.querySelectorAll('.drawer')
-    .forEach(d=>d.classList.remove('active'));
+            <img src="intro.gif" alt="Adam Falp">
 
-
-
-    document
-    .getElementById(btn.dataset.target)
-    .classList.add('active');
+        `;
 
 
+        showingAbout = false;
 
-    window.scrollTo({
-
-        top:0,
-
-        behavior:'smooth'
-
-    });
-
-
-};
-
+    }
 
 });
-
-
-
-
-
-/* =====================
-   ABOUT BUTTON
-===================== */
-
-
-document.getElementById("aboutBtn").onclick=()=>{
-
-
-document
-.getElementById("ABOUT")
-.scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-
-};
-
-
 
 </script>
 
 
 </body>
-
 </html>
