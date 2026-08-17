@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Adam Falp Illustration</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+
+    width: 900px;
+
+    max-width: 92%;
+
+    margin: 80px auto;
+
+    border: 1px solid white;
+
+    padding: 25px;
+
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+}
+
+
+/* =========================
+   INDIVIDUAL WORK
+========================= */
+
+.work {
+
+    position: relative;
+
+    background: #000;
+
+    overflow: hidden;
+
+}
+
+
+.work img {
+
+    width: 100%;
+
+    display: block;
+
+    border: 1px solid white;
+
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.label {
+
+    padding: 12px 4px 5px;
+
+    color: white;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    letter-spacing: 1px;
+
+}
+
+
+.label strong {
+
+    font-size: 14px;
+
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.work img {
+
+    transition: opacity 0.25s ease;
+
+}
+
+
+.work:hover img {
+
+    opacity: 0.75;
+
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back {
+
+    display: inline-block;
+
+    margin-top: 40px;
+
+    padding: 12px 30px;
+
+    border: 1px solid white;
+
+    color: white;
+
+    background: black;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    transition: 0.2s;
+
+}
+
+
+.back:hover {
+
+    background: white;
+
+    color: black;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .container {
+
+        margin: 30px auto;
+
+        padding: 15px;
+
+    }
+
+    .gallery {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- =========================
+     ILLUSTRATION GALLERY
+========================= -->
+
+<div class="gallery">
+
+
+<!-- 01 -->
+
+<div class="work">
+
+<img src="Hendrix.jpg">
+
+<div class="label">
+
+<strong>Jimi Hendrix</strong><br>
+
+2024
+
+</div>
+
+</div>
+
+
+
+<!-- 02 -->
+
+<div class="work">
+
+<img src="HireathAlbumcover.jpg">
+
+<div class="label">
+
+<strong>Hireath Album Cover</strong><br>
+
+2025
+
+</div>
+
+</div>
+
+
+
+<!-- 03 -->
+
+<div class="work">
+
+<img src="rpg.jpg">
+
+<div class="label">
+
+<strong>RPG Illustration</strong><br>
+
+2026
+
+</div>
+
+</div>
+
+
+
+<!-- 04 -->
+
+<div class="work">
+
+<img src="Bowieprint.jpg">
+
+<div class="label">
+
+<strong>Bowie Print</strong><br>
+
+2025
+
+</div>
+
+</div>
+
+
+
+<!-- 05 -->
+
+<div class="work">
+
+<img src="Risocloseup.jpg">
+
+<div class="label">
+
+<strong>Riso Print</strong><br>
+
+2024
+
+</div>
+
+</div>
+
+
+
+<!-- 06 -->
+
+<div class="work">
+
+<img src="Pennygrabbers.jpg">
+
+<div class="label">
+
+<strong>Penny Grabbers</strong><br>
+
+2025
+
+</div>
+
+</div>
+
+
+
+<!-- 07 -->
+
+<div class="work">
+
+<img src="nickel1.jpg">
+
+<div class="label">
+
+<strong>Nickel Cinema Advert</strong><br>
+
+2025
+
+</div>
+
+</div>
+
+
+
+<!-- 08 -->
+
+<div class="work">
+
+<img src="nickel2.jpg">
+
+<div class="label">
+
+<strong>Nickel Cinema Advert</strong><br>
+
+2026
+
+</div>
+
+</div>
+
+
+
+<!-- 09 -->
+
+<div class="work">
+
+<img src="Screenprint.jpg">
+
+<div class="label">
+
+<strong>Screenprint</strong><br>
+
+2024
+
+</div>
+
+</div>
+
+
+
+<!-- 10 — ADD NEXT IMAGE HERE -->
+
+<!--
+
+<div class="work">
+
+<img src="image10.jpg">
+
+<div class="label">
+
+<strong>Title</strong><br>
+
+2026
+
+</div>
+
+</div>
+
+-->
+
+
+</div>
+
+
+<!-- =========================
+     BACK
+========================= -->
+
+<a class="back" href="index.html">
+
+BACK
+
+</a>
+
+
+</div>
+
+
+</body>
+</html>
