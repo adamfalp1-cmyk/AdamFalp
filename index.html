@@ -26,13 +26,17 @@ body {
 ========================= */
 
 .container {
+
     width: 700px;
+
     max-width: 90%;
+
     margin: 120px auto;
 
     border: 1px solid white;
 
     padding: 20px;
+
 }
 
 
@@ -58,24 +62,32 @@ table {
 
 
 /* =========================
-   GIF / IMAGE
+   GIF / VISUAL AREA
 ========================= */
 
 #visual {
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     min-height: 400px;
+
 }
 
+
 #visual img {
+
     width: 280px;
+
     max-width: 100%;
 
     display: block;
 
     border: 1px solid white;
+
 }
 
 
@@ -100,6 +112,47 @@ table {
     flex-direction: column;
 
     justify-content: center;
+
+}
+
+
+/* =========================
+   COMING SOON
+========================= */
+
+.coming-soon {
+
+    min-height: 400px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    text-align: center;
+
+}
+
+
+/* =========================
+   EMAIL
+========================= */
+
+.email {
+
+    color: #cc3333;
+
+}
+
+
+.email:hover {
+
+    color: white;
 
 }
 
@@ -145,15 +198,6 @@ table {
 
 
 /* =========================
-   EMAIL
-========================= */
-
-.email {
-    color: #cc3333;
-}
-
-
-/* =========================
    MOBILE
 ========================= */
 
@@ -163,7 +207,10 @@ table {
 
         margin: 40px auto;
 
+        padding: 15px;
+
     }
+
 
     table,
     tr,
@@ -175,15 +222,26 @@ table {
 
     }
 
+
     .image-cell {
 
         margin-bottom: 30px;
 
     }
 
+
+    .menu-cell {
+
+        text-align: center;
+
+    }
+
+
     .menu-button {
 
         width: 200px;
+
+        margin: 12px auto;
 
     }
 
@@ -206,14 +264,14 @@ table {
 
 
 <!-- =========================
-     IMAGE / ABOUT AREA
+     GIF / ABOUT / PAINTINGS
 ========================= -->
 
 <td class="image-cell">
 
 <div id="visual">
 
-    <img src="COMIX.jpg" alt="Adam Falp">
+    <img src="intro.gif" alt="Adam Falp">
 
 </div>
 
@@ -228,13 +286,13 @@ table {
 <td class="menu-cell">
 
 
-<a class="menu-button" href="Illustrationindex.html">
+<a class="menu-button" href="illustration.html">
 ILLUSTRATION
 </a>
 
 
-<a class="menu-button" href="painting.html">
-PAINTING
+<a class="menu-button" href="#" id="paintingsButton">
+PAINTINGS
 </a>
 
 
@@ -265,76 +323,141 @@ ABOUT
 
 
 
-<!-- =========================
-     ABOUT SCRIPT
-========================= -->
-
 <script>
 
-const aboutButton = document.getElementById("aboutButton");
 
-const visual = document.getElementById("visual");
+/* =========================
+   VARIABLES
+========================= */
+
+const aboutButton =
+    document.getElementById("aboutButton");
+
+const paintingsButton =
+    document.getElementById("paintingsButton");
+
+const visual =
+    document.getElementById("visual");
 
 
-let showingAbout = false;
+let currentView = "gif";
 
+
+/* =========================
+   RETURN TO GIF
+========================= */
+
+function showGif() {
+
+    visual.innerHTML = `
+
+        <img src="intro.gif" alt="Adam Falp">
+
+    `;
+
+    currentView = "gif";
+
+}
+
+
+/* =========================
+   ABOUT
+========================= */
 
 aboutButton.addEventListener("click", function(event) {
 
     event.preventDefault();
 
 
-    if (!showingAbout) {
+    if (currentView === "about") {
 
+        showGif();
 
-        visual.innerHTML = `
-
-            <div class="about-text">
-
-                <strong>ADAM FALP</strong>
-
-                Is an Artist, illustrator and cartoonist based in London.
-
-                <br><br>
-
-                His work explores underground culture,
-                psychedelia, absurdity and contemporary Britain.
-                His comics have appeared in independent and underground 
-                publications internationally, alongside his own successful 
-                self-published titles including Electric Chair and Smokin’ Bedroom. 
-                He is also a contributing artist and editor for Underground Kingdom, 
-                an independent British comics collectove bringing together emerging 
-                and established UK based cartoonists.
-
-                
-
-                <br><br>
-
-                <a class="email" href="mailto:hello@adamfalp.com">
-                hello@adamfalp.com
-                </a>
-
-            </div>
-
-        `;
-
-
-        showingAbout = true;
-
-
-    } else {
-
-
-        visual.innerHTML = `
-
-            <img src="intro.gif" alt="Adam Falp">
-
-        `;
-
-
-        showingAbout = false;
+        return;
 
     }
+
+
+    visual.innerHTML = `
+
+        <div class="about-text">
+
+            <strong>ADAM FALP</strong>
+
+            <br>
+
+            Artist, illustrator and cartoonist based in London.
+
+            <br><br>
+
+            His work explores underground culture,
+            psychedelia, absurdity and contemporary Britain.
+
+            <br><br>
+
+            His comics have appeared in independent and
+            underground publications internationally,
+            alongside his own successful self-published
+            titles including <em>Electric Chair</em>,
+            <em>Smokin' Bedroom</em> and
+            <em>Cockney Kung-Fu</em>.
+
+            <br><br>
+
+            He also draws and edits
+            <em>Underground Kingdom</em>, an independent
+            comics anthology featuring cartoonists from
+            across the underground scene.
+
+            <br><br>
+
+            <a class="email"
+               href="mailto:hello@adamfalp.com">
+
+               hello@adamfalp.com
+
+            </a>
+
+        </div>
+
+    `;
+
+
+    currentView = "about";
+
+});
+
+
+/* =========================
+   PAINTINGS
+========================= */
+
+paintingsButton.addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+
+    if (currentView === "paintings") {
+
+        showGif();
+
+        return;
+
+    }
+
+
+    visual.innerHTML = `
+
+        <div class="coming-soon">
+
+            COMING SOON
+
+        </div>
+
+    `;
+
+
+    currentView = "paintings";
 
 });
 
