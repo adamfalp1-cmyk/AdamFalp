@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 
@@ -66,6 +67,8 @@ body {
     background: #000;
 
     overflow: hidden;
+
+    cursor: pointer;
 
 }
 
@@ -169,6 +172,144 @@ body {
 
 
 /* =========================
+   LIGHTBOX
+========================= */
+
+#lightbox {
+
+    display: none;
+
+    position: fixed;
+
+    z-index: 9999;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.96);
+
+    overflow-y: auto;
+
+    padding: 40px;
+
+}
+
+
+.lightbox-content {
+
+    min-height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.lightbox-images {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 30px;
+
+    max-width: 1200px;
+
+    width: 100%;
+
+}
+
+
+.lightbox-images img {
+
+    max-width: calc(50% - 15px);
+
+    max-height: 75vh;
+
+    width: auto;
+
+    height: auto;
+
+    display: block;
+
+    border: 1px solid white;
+
+}
+
+
+/* =========================
+   LIGHTBOX TITLE
+========================= */
+
+.lightbox-title {
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    line-height: 1.6;
+
+}
+
+
+.lightbox-title strong {
+
+    font-size: 15px;
+
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close {
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 30px;
+
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: normal;
+
+    cursor: pointer;
+
+    line-height: 1;
+
+    z-index: 10000;
+
+}
+
+
+.close:hover {
+
+    color: #cc3333;
+
+}
+
+
+/* =========================
    MOBILE
 ========================= */
 
@@ -182,11 +323,48 @@ body {
 
     }
 
+
     .gallery {
 
         grid-template-columns: 1fr;
 
         gap: 25px;
+
+    }
+
+
+    #lightbox {
+
+        padding: 60px 20px 30px;
+
+    }
+
+
+    .lightbox-images {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 20px;
+
+    }
+
+
+    .lightbox-images img {
+
+        max-width: 100%;
+
+        max-height: none;
+
+    }
+
+
+    .close {
+
+        top: 20px;
+
+        right: 20px;
 
     }
 
@@ -196,23 +374,20 @@ body {
 
 </head>
 
-
 <body>
-
 
 <div class="container">
 
-
 <div class="gallery">
-
 
 <!-- =========================
      01
 ========================= -->
 
-<div class="work">
+<div class="work"
+onclick="openLightbox('Hendrix.jpg', '', 'Jimi Hendrix', '2024')">
 
-<img src="Hendrix.jpg">
+<img src="Hendrix.jpg" alt="Jimi Hendrix">
 
 <div class="label">
 
@@ -224,15 +399,14 @@ body {
 
 </div>
 
-
-
 <!-- =========================
      02
 ========================= -->
 
-<div class="work">
+<div class="work"
+onclick="openLightbox('HireathAlbumcover.jpg', 'HireathMockup.jpg', 'Hireath Album Cover', '2025')">
 
-<img src="HireathAlbumcover.jpg">
+<img src="HireathAlbumcover.jpg" alt="Hireath Album Cover">
 
 <div class="label">
 
@@ -244,15 +418,14 @@ body {
 
 </div>
 
-
-
 <!-- =========================
      03
 ========================= -->
 
-<div class="work">
+<div class="work"
+onclick="openLightbox('rpg.jpg', '', 'RPG Illustration', '2026')">
 
-<img src="rpg.jpg">
+<img src="rpg.jpg" alt="RPG Illustration">
 
 <div class="label">
 
@@ -264,15 +437,14 @@ body {
 
 </div>
 
-
-
 <!-- =========================
      04
 ========================= -->
 
-<div class="work">
+<div class="work"
+onclick="openLightbox('Bowieprint.jpg', '', 'Bowie Print', '2025')">
 
-<img src="Bowieprint.jpg">
+<img src="Bowieprint.jpg" alt="Bowie Print">
 
 <div class="label">
 
@@ -284,15 +456,14 @@ body {
 
 </div>
 
-
-
 <!-- =========================
      05
 ========================= -->
 
-<div class="work">
+<div class="work"
+onclick="openLightbox('Risocloseup.jpg', '', 'Riso Print', '2024')">
 
-<img src="Risocloseup.jpg">
+<img src="Risocloseup.jpg" alt="Riso Print">
 
 <div class="label">
 
@@ -304,15 +475,14 @@ body {
 
 </div>
 
-
-
 <!-- =========================
      06
 ========================= -->
 
-<div class="work">
+<div class="work"
+onclick="openLightbox('Pennygrabbers.jpg', 'PennygrabbersMockup.jpg', 'Penny Grabbers', '2025')">
 
-<img src="Pennygrabbers.jpg">
+<img src="Pennygrabbers.jpg" alt="Penny Grabbers">
 
 <div class="label">
 
@@ -324,15 +494,14 @@ body {
 
 </div>
 
-
-
 <!-- =========================
      07
 ========================= -->
 
-<div class="work">
+<div class="work"
+onclick="openLightbox('nickel1.jpg', '', 'Nickel Cinema Advert', '2025')">
 
-<img src="nickel1.jpg">
+<img src="nickel1.jpg" alt="Nickel Cinema Advert">
 
 <div class="label">
 
@@ -344,15 +513,14 @@ body {
 
 </div>
 
-
-
 <!-- =========================
      08
 ========================= -->
 
-<div class="work">
+<div class="work"
+onclick="openLightbox('nickel2.jpg', '', 'Nickel Cinema Advert', '2026')">
 
-<img src="nickel2.jpg">
+<img src="nickel2.jpg" alt="Nickel Cinema Advert">
 
 <div class="label">
 
@@ -364,15 +532,14 @@ body {
 
 </div>
 
-
-
 <!-- =========================
      09
 ========================= -->
 
-<div class="work">
+<div class="work"
+onclick="openLightbox('Screenprint.jpg', '', 'Screenprint', '2024')">
 
-<img src="Screenprint.jpg">
+<img src="Screenprint.jpg" alt="Screenprint">
 
 <div class="label">
 
@@ -384,17 +551,16 @@ body {
 
 </div>
 
-
-
 <!-- =========================
      10 — ADD FUTURE IMAGE HERE
 ========================= -->
 
 <!--
 
-<div class="work">
+<div class="work"
+onclick="openLightbox('image10.jpg', '', 'Title', '2026')">
 
-<img src="image10.jpg">
+<img src="image10.jpg" alt="Title">
 
 <div class="label">
 
@@ -408,9 +574,30 @@ body {
 
 -->
 
+<!-- =========================
+     FUTURE TWO-IMAGE PROJECT
+========================= -->
+
+<!--
+
+<div class="work"
+onclick="openLightbox('image11.jpg', 'image11Mockup.jpg', 'Title', '2026')">
+
+<img src="image11.jpg" alt="Title">
+
+<div class="label">
+
+<strong>Title</strong><br>
+
+2026
 
 </div>
 
+</div>
+
+-->
+
+</div>
 
 <!-- =========================
      BACK BUTTON
@@ -422,9 +609,125 @@ BACK
 
 </a>
 
+</div>
+
+<!-- =========================
+     LIGHTBOX
+========================= -->
+
+<div id="lightbox">
+
+<div class="close" onclick="closeLightbox()">
+
+×
 
 </div>
 
+<div class="lightbox-content" onclick="closeLightbox()">
+
+<div class="lightbox-images" onclick="event.stopPropagation()">
+
+<img id="lightboxMain" src="" alt="">
+
+<img id="lightboxSecondary" src="" alt="">
+
+</div>
+
+<div class="lightbox-title" id="lightboxTitle"></div>
+
+</div>
+
+</div>
+
+<script>
+
+
+/* =========================
+   REMEMBER SCROLL POSITION
+========================= */
+
+let savedScrollPosition = 0;
+
+
+
+/* =========================
+   OPEN LIGHTBOX
+========================= */
+
+function openLightbox(mainImage, secondaryImage, title, year) {
+
+
+    savedScrollPosition = window.scrollY;
+
+
+    document.getElementById("lightboxMain").src = mainImage;
+
+
+    if (secondaryImage) {
+
+        document.getElementById("lightboxSecondary").src = secondaryImage;
+
+        document.getElementById("lightboxSecondary").style.display = "block";
+
+    } else {
+
+        document.getElementById("lightboxSecondary").src = "";
+
+        document.getElementById("lightboxSecondary").style.display = "none";
+
+    }
+
+
+    document.getElementById("lightboxTitle").innerHTML =
+        "<strong>" + title + "</strong><br>" + year;
+
+
+    document.getElementById("lightbox").style.display = "block";
+
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+
+/* =========================
+   CLOSE LIGHTBOX
+========================= */
+
+function closeLightbox() {
+
+
+    document.getElementById("lightbox").style.display = "none";
+
+
+    document.body.style.overflow = "";
+
+
+    window.scrollTo(0, savedScrollPosition);
+
+}
+
+
+
+/* =========================
+   ESCAPE KEY
+========================= */
+
+document.addEventListener("keydown", function(event) {
+
+
+    if (event.key === "Escape") {
+
+        closeLightbox();
+
+    }
+
+
+});
+
+</script>
 
 </body>
 </html>
+
