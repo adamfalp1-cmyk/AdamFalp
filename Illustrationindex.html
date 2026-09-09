@@ -14,6 +14,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background: #000;
@@ -23,16 +27,53 @@ body {
 
 
 /* =========================
-   MAIN CONTAINER
+   PAGE
 ========================= */
 
-.container {
+.page {
 
     width: 900px;
 
     max-width: 92%;
 
-    margin: 80px auto;
+    margin: 60px auto 0;
+
+}
+
+
+/* =========================
+   LOGO / NAME
+========================= */
+
+.logo {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+.logo img {
+
+    max-width: 350px;
+
+    width: 70%;
+
+    height: auto;
+
+    display: inline-block;
+
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+
+    width: 100%;
 
     border: 1px solid white;
 
@@ -172,6 +213,52 @@ body {
 
 
 /* =========================
+   ABOUT / CONTACT
+========================= */
+
+.contact {
+
+    width: 900px;
+
+    max-width: 92%;
+
+    margin: 55px auto 80px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+.contact strong {
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.contact .email {
+
+    color: #cc3333;
+
+    text-decoration: none;
+
+}
+
+
+.contact .email:hover {
+
+    color: white;
+
+}
+
+
+/* =========================
    LIGHTBOX
 ========================= */
 
@@ -195,7 +282,9 @@ body {
 
     overflow-y: auto;
 
-    padding: 40px;
+    overflow-x: hidden;
+
+    padding: 40px 30px;
 
 }
 
@@ -315,9 +404,32 @@ body {
 
 @media (max-width: 650px) {
 
-    .container {
+    .page {
 
-        margin: 30px auto;
+        max-width: 94%;
+
+        margin: 30px auto 0;
+
+    }
+
+
+    .logo {
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .logo img {
+
+        max-width: 280px;
+
+        width: 85%;
+
+    }
+
+
+    .container {
 
         padding: 15px;
 
@@ -333,9 +445,42 @@ body {
     }
 
 
+    .label {
+
+        bottom: 1px;
+
+    }
+
+
+    .contact {
+
+        width: 94%;
+
+        max-width: none;
+
+        margin: 40px auto 60px;
+
+        padding: 0 10px;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+    }
+
+
     #lightbox {
 
-        padding: 60px 20px 30px;
+        padding: 60px 15px 30px;
+
+    }
+
+
+    .lightbox-content {
+
+        justify-content: flex-start;
+
+        padding-top: 20px;
 
     }
 
@@ -357,14 +502,29 @@ body {
 
         max-height: none;
 
+        width: auto;
+
+        height: auto;
+
+    }
+
+
+    .lightbox-title {
+
+        margin-top: 20px;
+
+        padding-bottom: 20px;
+
     }
 
 
     .close {
 
-        top: 20px;
+        top: 18px;
 
         right: 20px;
+
+        font-size: 26px;
 
     }
 
@@ -375,6 +535,26 @@ body {
 </head>
 
 <body>
+
+<!-- =========================
+     PAGE
+========================= -->
+
+<div class="page">
+
+<!-- =========================
+     LOGO
+========================= -->
+
+<div class="logo">
+
+<img src="aflogo2.jpg" alt="Adam Falp">
+
+</div>
+
+<!-- =========================
+     MAIN PORTFOLIO
+========================= -->
 
 <div class="container">
 
@@ -607,6 +787,32 @@ onclick="openLightbox('image11.jpg', 'image11Mockup.jpg', 'Title', '2026')">
 
 BACK
 
+</a>
+
+</div>
+
+</div>
+
+<!-- =========================
+     ABOUT / CONTACT
+========================= -->
+
+<div class="contact">
+
+<strong>ADAM FALP</strong>
+
+<br><br>
+
+Is an Artist, illustrator and cartoonist based in London.
+
+<br><br>
+
+His work explores underground culture, psychedelia, absurdity and contemporary Britain. His comics have appeared in independent and underground publications internationally, alongside his own successful self-published titles including <em>Electric Chair</em> and <em>Smokin’ Bedroom</em>. He also draws and edits for <em>Underground Kingdom Comix</em>, an independent British comics collective featuring cartoonists from across the UK underground scene.
+
+<br><br>
+
+<a class="email" href="mailto:hello@adamfalp.com">
+hello@adamfalp.com
 </a>
 
 </div>
