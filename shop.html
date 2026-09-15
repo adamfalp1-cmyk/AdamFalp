@@ -739,7 +739,7 @@ CHECKOUT </button>
 <h2>SHIPPING DESTINATION</h2>
 
 <p>
-Please select your destination.
+Please select the country your order will be delivered to.
 </p>
 
 <div class="shipping-buttons">
@@ -747,19 +747,28 @@ Please select your destination.
 <button
 class="shipping-btn"
 onclick="startCheckout('GB')">
-UNITED KINGDOM </button>
+UNITED KINGDOM
+</button>
 
 <button
 class="shipping-btn"
-onclick="startCheckout('INT')">
-INTERNATIONAL </button>
+onclick="startCheckout('EU')">
+EUROPE
+</button>
+
+<button
+class="shipping-btn"
+onclick="startCheckout('ROW')">
+REST OF WORLD
+</button>
 
 </div>
 
 <button
 class="shipping-cancel"
 onclick="closeShippingChoice()">
-CANCEL </button>
+CANCEL
+</button>
 
 </div>
 
