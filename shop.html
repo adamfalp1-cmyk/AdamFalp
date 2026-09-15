@@ -67,6 +67,150 @@ body{
     padding:5px;
     font-family:Arial,Helvetica,sans-serif;
     font-size:12px;
+
+    /* =========================
+   SHIPPING CHOICE
+========================= */
+
+.shipping-choice{
+
+    display:none;
+
+    position:fixed;
+
+    z-index:9999;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.94);
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+}
+
+
+.shipping-box{
+
+    width:400px;
+    max-width:100%;
+
+    border:1px solid #fff;
+
+    background:#000;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+
+.shipping-box h2{
+
+    margin:0 0 15px;
+
+    font-family:Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:17px;
+
+    letter-spacing:1px;
+
+}
+
+
+.shipping-box p{
+
+    font-family:Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:12px;
+
+    color:#aaa;
+
+    margin-bottom:20px;
+
+}
+
+
+.shipping-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+
+.shipping-btn{
+
+    padding:10px;
+
+    border:1px solid #fff;
+
+    background:#000;
+
+    color:#fff;
+
+    font-family:Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:12px;
+
+    cursor:pointer;
+
+}
+
+
+.shipping-btn:hover{
+
+    background:#fff;
+
+    color:#000;
+
+}
+
+
+.shipping-cancel{
+
+    margin-top:15px;
+
+    border:none;
+
+    background:none;
+
+    color:#888;
+
+    font-family:Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:11px;
+
+    cursor:pointer;
+
+}
+
+
+.shipping-cancel:hover{
+
+    color:#fff;
+
+    text-decoration:underline;
+
+}
 }
 
 
@@ -322,7 +466,45 @@ body{
     font-size:10px;
     color:#777;
 }
+<!-- =========================
+     SHIPPING DESTINATION
+========================= -->
 
+<div id="shippingChoice" class="shipping-choice">
+
+    <div class="shipping-box">
+
+        <h2>SHIPPING DESTINATION</h2>
+
+        <p>
+            Please select your destination.
+        </p>
+
+        <div class="shipping-buttons">
+
+            <button
+                class="shipping-btn"
+                onclick="startCheckout('GB')">
+                UNITED KINGDOM
+            </button>
+
+            <button
+                class="shipping-btn"
+                onclick="startCheckout('INT')">
+                INTERNATIONAL
+            </button>
+
+        </div>
+
+        <button
+            class="shipping-cancel"
+            onclick="closeShippingChoice()">
+            CANCEL
+        </button>
+
+    </div>
+
+</div>
 
 /* =========================
    ABOUT / CONTACT
@@ -1028,41 +1210,103 @@ function updateCart(){
    CHECKOUT
 ========================= */
 
-async function checkout(){
+function checkout(){
+
+    if(Object.keys(cart).length === 0){
+
+        return;
+
+    }
+
+    document.getElementById(
+        "shippingChoice"
+    ).style.display = "flex";
+
+}
+/* =========================
+   CLOSE SHIPPING CHOICE
+========================= */
+
+function closeShippingChoice(){
+
+    document.getElementById(
+        "shippingChoice"
+    ).style.display = "none";
+
+}
+
+
+/* =========================
+   START CHECKOUT
+========================= */
+
+async function startCheckout(country){
+
+    const shippingChoice =
+        document.getElementById(
+            "shippingChoice"
+        );
+
+    shippingChoice.style.display =
+        "none";
+
 
     const checkoutBtn =
-        document.getElementById("checkoutBtn");
-
-    checkoutBtn.disabled = true;
-    checkoutBtn.textContent = "LOADING...";
-
-    try {
-
-        const response = await fetch(
-            "https://adam-falp-shop.adamfalp1-f27.workers.dev/",
-            {
-                method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-                    cart: cart
-                })
-            }
+        document.getElementById(
+            "checkoutBtn"
         );
 
 
-        const data = await response.json();
+    checkoutBtn.disabled =
+        true;
+
+    checkoutBtn.textContent =
+        "LOADING...";
 
 
-        if (!response.ok || !data.checkoutUrl) {
+    try{
+
+        const response =
+            await fetch(
+
+                "https://adam-falp-shop.adamfalp1-f27.workers.dev/",
+
+                {
+
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:JSON.stringify({
+
+                        cart:cart,
+
+                        country:country
+
+                    })
+
+                }
+
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if(
+            !response.ok ||
+            !data.checkoutUrl
+        ){
 
             console.error(data);
 
             throw new Error(
-                data.error || "Checkout failed."
+                data.error ||
+                "Checkout failed."
             );
 
         }
@@ -1072,21 +1316,25 @@ async function checkout(){
             data.checkoutUrl;
 
 
-    } catch (error) {
+    }catch(error){
 
         console.error(error);
+
 
         alert(
             "Sorry, there was a problem opening checkout. Please try again."
         );
 
-        checkoutBtn.disabled = false;
-        checkoutBtn.textContent = "CHECKOUT";
+
+        checkoutBtn.disabled =
+            false;
+
+        checkoutBtn.textContent =
+            "CHECKOUT";
 
     }
 
 }
-
 /* =========================
    INITIAL DISPLAY
 ========================= */
