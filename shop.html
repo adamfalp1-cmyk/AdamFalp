@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ADAM FALP STORE</title>
 
 <style>
@@ -67,6 +69,7 @@ body{
     font-size:12px;
 }
 
+
 /* =========================
    CATALOG
 ========================= */
@@ -123,8 +126,16 @@ body{
 .desc{
     font-size:13px;
     line-height:1.4;
+    margin-bottom:10px;
+}
+
+.price{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:14px;
+    font-weight:bold;
     margin-bottom:12px;
 }
+
 
 /* =========================
    BUTTONS
@@ -157,6 +168,7 @@ body{
     background:#000;
     color:#777;
 }
+
 
 /* =========================
    CART
@@ -311,18 +323,40 @@ body{
     color:#777;
 }
 
+
 /* =========================
-   ABOUT
+   ABOUT / CONTACT
 ========================= */
 
 .about{
-    padding:20px;
+    width:100%;
+    margin:0;
+    padding:40px 25px 55px;
     border-top:1px solid #fff;
+    text-align:center;
+    font-size:13px;
+    line-height:1.7;
 }
 
-.about a{
-    color:#66aaff;
+.about h3{
+    margin:0;
+    font-size:14px;
+    letter-spacing:1px;
 }
+
+.about p{
+    margin:0;
+}
+
+.about .email{
+    color:#cc3333;
+    text-decoration:none;
+}
+
+.about .email:hover{
+    color:#fff;
+}
+
 
 /* =========================
    FOOTER
@@ -335,6 +369,7 @@ body{
     font-size:11px;
     color:#999;
 }
+
 
 /* =========================
    MOBILE
@@ -381,6 +416,10 @@ body{
         width:100%;
     }
 
+    .about{
+        padding:35px 20px 50px;
+    }
+
 }
 
 @media (max-width:430px){
@@ -400,26 +439,48 @@ body{
 
 </head>
 
+
 <body>
 
 <div class="wrapper">
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <div class="header">
+
 <img src="aflogo.jpg" alt="ADAM FALP">
+
 </div>
+
+
+<!-- =========================
+     NAV
+========================= -->
 
 <div class="nav">
+
 <a href="#catalog">CATALOG</a>
-<a href="#cart">CART</a>
 <a href="#about">ABOUT</a>
 <a href="#about">CONTACT</a>
+<a href="#cart">CART</a>
 <a href="index.html#illustration">BACK</a>
+
 </div>
 
+
+<!-- =========================
+     MARQUEE
+========================= -->
+
 <div class="marquee">
+
 <marquee>
 SMOKIN' BEDROOM NOW AVAILABLE • LIMITED PRINT RUNS • MAIL ORDER ONLY • UNDERGROUND COMIX • PSYCHEDELIA •
 </marquee>
+
 </div>
 
 
@@ -446,7 +507,11 @@ IN STOCK
 
 <div class="desc">
 A gambling PI explores Britain's grim underbelly.<br><br>
-44 Pages • B+W
+44 Pages • B+W.
+</div>
+
+<div class="price">
+£7.00
 </div>
 
 <button
@@ -474,7 +539,11 @@ IN STOCK
 
 <div class="desc">
 Football fraudsters, useless artists and pie entrepreneurs.<br><br>
-40 Pages • B+W
+40 Pages • B+W.
+</div>
+
+<div class="price">
+£7.00
 </div>
 
 <button
@@ -502,7 +571,11 @@ IN STOCK
 
 <div class="desc">
 Three-way anthology by Vincent Bell-Robertson, Adam Falp & Mat Greaves.<br><br>
-40 Pages • Full Colour
+40 Pages • Full Colour.
+</div>
+
+<div class="price">
+£8.00
 </div>
 
 <button
@@ -532,29 +605,8 @@ COMING SOON
 3 Colour Riso Print. 29.7cm x 42cm
 </div>
 
-<a class="order-btn" href="#">
-COMING SOON
-</a>
-
-</div>
-
-
-<!-- COMING SOON -->
-
-<div class="item">
-
-<img src="placeholder.jpg" alt="Coming Soon">
-
-<div class="title">
-COMING SOON
-</div>
-
-<div class="stock soldout">
-COMING SOON
-</div>
-
-<div class="desc">
-Future release.
+<div class="price">
+—
 </div>
 
 <a class="order-btn" href="#">
@@ -580,6 +632,39 @@ COMING SOON
 
 <div class="desc">
 Future release.
+</div>
+
+<div class="price">
+—
+</div>
+
+<a class="order-btn" href="#">
+COMING SOON
+</a>
+
+</div>
+
+
+<!-- COMING SOON -->
+
+<div class="item">
+
+<img src="placeholder.jpg" alt="Coming Soon">
+
+<div class="title">
+COMING SOON
+</div>
+
+<div class="stock soldout">
+COMING SOON
+</div>
+
+<div class="desc">
+Future release.
+</div>
+
+<div class="price">
+—
 </div>
 
 <a class="order-btn" href="#">
@@ -640,22 +725,24 @@ Checkout will be connected to Square.
 
 
 <!-- =========================
-     ABOUT
+     ABOUT / CONTACT
 ========================= -->
 
 <div class="about" id="about">
 
-<h3>ABOUT</h3>
+<h3>ADAM FALP</h3>
 
-<p>
-Adam Falp is an artist, illustrator and cartoonist based in London. His work explores underground culture, psychedelia, absurdity and contemporary Britain.
+<p><br>
+Is an artist, illustrator and cartoonist based in London.
 </p>
 
-<h3>CONTACT</h3>
+<p><br>
+His work explores underground culture, psychedelia, absurdity and contemporary Britain. His comics have appeared in independent and underground publications internationally, alongside his own successful self-published titles including <em>Electric Chair</em> and <em>Smokin’ Bedroom</em>. He also draws and edits for <em>Underground Kingdom Comix</em>, an independent British comics collective featuring cartoonists from across the UK underground scene.
+</p>
 
-<p>
-<a href="mailto:adamfalp1@yahoo.com">
-adamfalp1@yahoo.com
+<p><br>
+<a class="email" href="mailto:hello@adamfalp.com">
+hello@adamfalp.com
 </a>
 </p>
 
@@ -713,13 +800,13 @@ let cart = {};
 
 const savedCart = localStorage.getItem("adamFalpCart");
 
-if (savedCart) {
+if(savedCart){
 
-    try {
+    try{
 
         cart = JSON.parse(savedCart);
 
-    } catch (error) {
+    }catch(error){
 
         cart = {};
 
@@ -748,11 +835,11 @@ function saveCart(){
 
 function addToCart(productId){
 
-    if (!cart[productId]) {
+    if(!cart[productId]){
 
         cart[productId] = 1;
 
-    } else {
+    }else{
 
         cart[productId]++;
 
@@ -775,13 +862,13 @@ function addToCart(productId){
 
 function changeQuantity(productId, amount){
 
-    if (!cart[productId]) {
+    if(!cart[productId]){
         return;
     }
 
     cart[productId] += amount;
 
-    if (cart[productId] <= 0) {
+    if(cart[productId] <= 0){
 
         delete cart[productId];
 
@@ -847,7 +934,7 @@ function updateCart(){
         Object.keys(cart);
 
 
-    if (cartKeys.length === 0){
+    if(cartKeys.length === 0){
 
         cartItems.innerHTML =
             '<div class="empty-cart">Your cart is empty.</div>';
@@ -957,6 +1044,7 @@ function checkout(){
 updateCart();
 
 </script>
+
 
 </body>
 </html>
