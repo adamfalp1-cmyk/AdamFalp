@@ -1028,14 +1028,64 @@ function updateCart(){
    CHECKOUT
 ========================= */
 
-function checkout(){
+async function checkout(){
 
-    alert(
-        "Checkout will be connected to Square once the cart is finished."
-    );
+    const checkoutBtn =
+        document.getElementById("checkoutBtn");
+
+    checkoutBtn.disabled = true;
+    checkoutBtn.textContent = "LOADING...";
+
+    try {
+
+        const response = await fetch(
+            "https://adam-falp-shop.adamfalp1-f27.workers.dev/",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    cart: cart
+                })
+            }
+        );
+
+
+        const data = await response.json();
+
+
+        if (!response.ok || !data.checkoutUrl) {
+
+            console.error(data);
+
+            throw new Error(
+                data.error || "Checkout failed."
+            );
+
+        }
+
+
+        window.location.href =
+            data.checkoutUrl;
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Sorry, there was a problem opening checkout. Please try again."
+        );
+
+        checkoutBtn.disabled = false;
+        checkoutBtn.textContent = "CHECKOUT";
+
+    }
 
 }
-
 
 /* =========================
    INITIAL DISPLAY
