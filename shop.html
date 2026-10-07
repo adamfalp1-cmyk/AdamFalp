@@ -210,6 +210,21 @@ body{
 }
 
 
+/* T-SHIRT SIZE SELECTOR */
+
+.size-select{
+    width:100%;
+    max-width:180px;
+    padding:6px;
+    margin-bottom:10px;
+    border:1px solid #fff;
+    background:#000;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:12px;
+}
+
+
 /* BUTTONS */
 
 .order-btn{
@@ -501,7 +516,7 @@ body{
 <div class="wrapper">
 
 <div class="header">
-<img src="adamfalplogo.jpg" alt="ADAM FALP">
+<img src="aflogo.jpg" alt="ADAM FALP">
 </div>
 
 <div class="nav">
@@ -535,7 +550,7 @@ IN STOCK
 </div>
 
 <div class="desc">
-Electric Chair #1.<br><br>
+36 Pages • Full Colour.<br><br>
 </div>
 
 <div class="price">
@@ -563,7 +578,7 @@ IN STOCK
 </div>
 
 <div class="desc">
-Electric Chair #2.<br><br>
+32 Pages • Full Colour.<br><br>
 </div>
 
 <div class="price">
@@ -591,7 +606,7 @@ IN STOCK
 </div>
 
 <div class="desc">
-Electric Chair #3.<br><br>
+32 Pages • Full Colour.<br><br>
 </div>
 
 <div class="price">
@@ -619,7 +634,7 @@ IN STOCK
 </div>
 
 <div class="desc">
-Electric Chair #4.<br><br>
+32 Pages • Full Colour.<br><br>
 </div>
 
 <div class="price">
@@ -647,14 +662,57 @@ IN STOCK
 </div>
 
 <div class="desc">
-Electric Chair T-Shirt.<br><br>
+T-shirts for the discerning degenerate.<br><br>
+UK S – 5XL.
 </div>
 
 <div class="price">
 £25.00
 </div>
 
-<button class="order-btn" onclick="addToCart('ecshirt')">
+<select id="shirtSize" class="size-select">
+
+<option value="">
+SELECT SIZE
+</option>
+
+<option value="UK S">
+UK S
+</option>
+
+<option value="UK M">
+UK M
+</option>
+
+<option value="UK L">
+UK L
+</option>
+
+<option value="UK XL">
+UK XL
+</option>
+
+<option value="UK 2XL">
+UK 2XL
+</option>
+
+<option value="UK 3XL">
+UK 3XL
+</option>
+
+<option value="UK 4XL">
+UK 4XL
+</option>
+
+<option value="UK 5XL">
+UK 5XL
+</option>
+
+</select>
+
+<br>
+
+<button class="order-btn" onclick="addShirtToCart()">
 ADD TO CART
 </button>
 
@@ -757,7 +815,6 @@ ADD TO CART
 
 </div>
 
-
 <!-- CART -->
 
 <div class="cart" id="cart">
@@ -812,28 +869,24 @@ Please select the country your order will be delivered to.
 <button
 class="shipping-btn"
 onclick="startCheckout('GB')">
-UNITED KINGDOM
-</button>
+UNITED KINGDOM </button>
 
 <button
 class="shipping-btn"
 onclick="startCheckout('EU')">
-EUROPE
-</button>
+EUROPE </button>
 
 <button
 class="shipping-btn"
 onclick="startCheckout('ROW')">
-REST OF WORLD
-</button>
+REST OF WORLD </button>
 
 </div>
 
 <button
 class="shipping-cancel"
 onclick="closeShippingChoice()">
-CANCEL
-</button>
+CANCEL </button>
 
 </div>
 
@@ -888,6 +941,66 @@ const products = {
     retailpark: {
         name: "Retail Park",
         price: 6.00
+    },
+
+    ec1: {
+        name: "Electric Chair #1",
+        price: 6.00
+    },
+
+    ec2: {
+        name: "Electric Chair #2",
+        price: 6.00
+    },
+
+    ec3: {
+        name: "Electric Chair #3",
+        price: 6.00
+    },
+
+    ec4: {
+        name: "Electric Chair #4",
+        price: 6.00
+    },
+
+    ecshirt_s: {
+        name: "Electric Chair T-Shirt — UK S",
+        price: 25.00
+    },
+
+    ecshirt_m: {
+        name: "Electric Chair T-Shirt — UK M",
+        price: 25.00
+    },
+
+    ecshirt_l: {
+        name: "Electric Chair T-Shirt — UK L",
+        price: 25.00
+    },
+
+    ecshirt_xl: {
+        name: "Electric Chair T-Shirt — UK XL",
+        price: 25.00
+    },
+
+    ecshirt_2xl: {
+        name: "Electric Chair T-Shirt — UK 2XL",
+        price: 25.00
+    },
+
+    ecshirt_3xl: {
+        name: "Electric Chair T-Shirt — UK 3XL",
+        price: 25.00
+    },
+
+    ecshirt_4xl: {
+        name: "Electric Chair T-Shirt — UK 4XL",
+        price: 25.00
+    },
+
+    ecshirt_5xl: {
+        name: "Electric Chair T-Shirt — UK 5XL",
+        price: 25.00
     }
 
 };
@@ -950,6 +1063,36 @@ function addToCart(productId){
     document.getElementById("cart").scrollIntoView({
         behavior:"smooth"
     });
+
+}
+
+
+/* ADD T-SHIRT TO CART */
+
+function addShirtToCart(){
+
+    const size =
+        document.getElementById("shirtSize").value;
+
+
+    if(!size){
+
+        alert("Please select a size.");
+
+        return;
+
+    }
+
+
+    const sizeId =
+        "ecshirt_" +
+        size
+            .toLowerCase()
+            .replace("uk ","")
+            .replace(" ","");
+
+
+    addToCart(sizeId);
 
 }
 
@@ -1045,6 +1188,12 @@ function updateCart(){
 
         const product =
             products[productId];
+
+
+        if(!product){
+            return;
+        }
+
 
         const quantity =
             cart[productId];
@@ -1249,3 +1398,4 @@ updateCart();
 
 </body>
 </html>
+
